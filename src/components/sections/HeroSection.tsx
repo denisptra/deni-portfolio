@@ -18,7 +18,7 @@ export default function HeroSection() {
   const [history, setHistory] = useState<string[]>([]);
   const [currentInput, setCurrentInput] = useState("");
   const [isTyping, setIsTyping] = useState(false);
-  const terminalEndRef = useRef<HTMLDivElement>(null);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   // Command database
   const getCommandOutput = (cmd: string): string[] => {
@@ -124,9 +124,11 @@ export default function HeroSection() {
     setHistory(bootSequence);
   }, []);
 
-  // Scroll to bottom when history changes or typing occurs
+  // Scroll to bottom of terminal container when history changes or typing occurs
   useEffect(() => {
-    terminalEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollTop = scrollContainerRef.current.scrollHeight;
+    }
   }, [history, currentInput]);
 
   return (
@@ -238,7 +240,10 @@ export default function HeroSection() {
             </div>
 
             {/* Terminal Output Area */}
-            <div className="p-6 sm:p-8 h-[320px] overflow-y-auto font-mono text-xs sm:text-[13px] text-[#37352f]/85 leading-relaxed space-y-2 select-text custom-scrollbar z-10 relative">
+            <div 
+              ref={scrollContainerRef}
+              className="p-6 sm:p-8 h-[320px] overflow-y-auto font-mono text-xs sm:text-[13px] text-[#37352f]/85 leading-relaxed space-y-2 select-text custom-scrollbar z-10 relative"
+            >
               
               {/* History outputs */}
               {history.map((line, idx) => {
@@ -272,8 +277,6 @@ export default function HeroSection() {
                 <span className="text-[#37352f] ml-2 whitespace-pre">{currentInput}</span>
                 <span className="ml-1 w-2.5 h-4.5 bg-[#37352f] inline-block animate-pulse" />
               </div>
-
-              <div ref={terminalEndRef} />
             </div>
 
             {/* Preset Tactical Command Panel (Interactive buttons under terminal) */}
