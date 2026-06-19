@@ -16,11 +16,11 @@ export default function ProjectCard({ project }: { project: MultilingualProject 
     <>
       {/* Premium Project Card */}
       <div
-        className="group relative flex flex-col justify-between rounded-[2.5rem] bg-white border border-[#eef0f2] overflow-hidden cursor-pointer hover:border-blue-100 hover:-translate-y-2 duration-500 ease-out shadow-xs hover:shadow-2xl select-none"
+        className="group relative flex flex-col justify-between rounded-3xl bg-white border border-[#eef0f2] overflow-hidden cursor-pointer hover:border-blue-100 hover:-translate-y-1.5 duration-500 ease-out shadow-xs hover:shadow-xl select-none"
         onClick={() => setIsOpen(true)}
       >
         {/* Card Image Header with floating tech tag */}
-        <div className="relative overflow-hidden aspect-[16/10] m-3.5 rounded-[1.8rem] border border-[#eef0f2] shadow-inner bg-[#fafaf9]">
+        <div className="relative overflow-hidden aspect-[16/10] m-3 rounded-2xl border border-[#eef0f2] shadow-inner bg-[#fafaf9]">
           {/* Grayscale hover to full color transform */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
@@ -34,40 +34,40 @@ export default function ProjectCard({ project }: { project: MultilingualProject 
         </div>
 
         {/* Card Content body */}
-        <div className="px-7 pb-7 pt-2 flex-grow flex flex-col justify-between">
+        <div className="px-6 pb-6 pt-1 flex-grow flex flex-col justify-between">
           <div>
             {/* Project Title */}
-            <h3 className="text-xl md:text-2xl font-black text-[#37352f] mb-3 tracking-tight group-hover:text-[#1F9CF0] transition-colors duration-300">
+            <h3 className="text-base sm:text-lg font-bold text-[#37352f] mb-2 tracking-tight group-hover:text-[#1F9CF0] transition-colors duration-300">
               {title}
             </h3>
             
             {/* Description Teaser */}
-            <p className="text-[#37352f]/50 text-[13px] leading-relaxed line-clamp-2 font-medium">
+            <p className="text-[#37352f]/50 text-[12px] leading-relaxed line-clamp-2 font-medium">
               {description}
             </p>
           </div>
 
-          <div className="mt-5">
+          <div className="mt-4">
             {/* Tech Badges on the front card */}
-            <div className="flex flex-wrap gap-1.5 mb-5">
+            <div className="flex flex-wrap gap-1 mb-4">
               {project.stack.slice(0, 3).map((tech) => (
                 <span
                   key={tech}
-                  className="bg-[#f1f1ef]/80 text-[#37352f]/60 text-[9px] font-extrabold px-2.5 py-1.5 rounded-lg border border-[#eef0f2]/60 uppercase tracking-wider"
+                  className="bg-[#f1f1ef]/80 text-[#37352f]/60 text-[9px] font-bold px-2 py-1 rounded-md border border-[#eef0f2]/60 uppercase tracking-wider"
                 >
                   {tech}
                 </span>
               ))}
               {project.stack.length > 3 && (
-                <span className="text-[9px] text-[#37352f]/40 font-bold px-1.5 py-1.5 flex items-center">
+                <span className="text-[9px] text-[#37352f]/40 font-bold px-1.5 py-1 flex items-center">
                   +{project.stack.length - 3}
                 </span>
               )}
             </div>
 
             {/* View Details Link with sliding arrow icon */}
-            <div className="flex items-center justify-between pt-4 border-t border-[#eef0f2]">
-              <span className="text-[10px] font-black text-[#37352f]/40 group-hover:text-black transition-colors uppercase tracking-[0.2em] flex items-center gap-1.5">
+            <div className="flex items-center justify-between pt-3 border-t border-[#eef0f2]">
+              <span className="text-[9px] font-black text-[#37352f]/40 group-hover:text-black transition-colors uppercase tracking-[0.2em] flex items-center gap-1.5">
                 <span>{t.projects.viewDetails}</span>
                 <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
               </span>
@@ -102,7 +102,7 @@ export default function ProjectCard({ project }: { project: MultilingualProject 
             {/* Modal Body */}
             <div className="p-10 md:p-14 space-y-12">
               <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
-                <h2 className="text-3xl md:text-5xl font-black text-[#37352f] tracking-tight leading-none">
+                <h2 className="text-2xl md:text-3xl font-black text-[#37352f] tracking-tight leading-none">
                   {title}
                 </h2>
                 {project.link && (

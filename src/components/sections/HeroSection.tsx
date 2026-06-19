@@ -6,11 +6,11 @@ import { ArrowUpRight, Terminal, Cpu, HardDrive, RefreshCw } from "lucide-react"
 import { useApp } from "@/context/AppContext";
 
 const PRESET_COMMANDS = [
-  { cmd: "cat profile.txt", label: "profile.txt", icon: "👤", desc: "View bio info" },
-  { cmd: "antigravity --skills", label: "skills_check", icon: "📊", desc: "Scan capabilities" },
-  { cmd: "antigravity --projects", label: "projects_list", icon: "📁", desc: "List main works" },
-  { cmd: "sysinfo", label: "sysinfo", icon: "⚙️", desc: "Display terminal stats" },
-  { cmd: "clear", label: "clear", icon: "🧹", desc: "Reset terminal view" }
+  { cmd: "Siapa Deni Trio Saputra?", label: "Siapa Deni?", icon: "👤", desc: "Profil singkat Deni" },
+  { cmd: "Apa keahlian teknis Deni?", label: "Keahlian & Skills", icon: "📊", desc: "Keahlian pemrograman & desain" },
+  { cmd: "Tampilkan proyek terbaru", label: "Proyek Terbaru", icon: "📁", desc: "Daftar proyek terpilih" },
+  { cmd: "Bagaimana cara menghubungi Deni?", label: "Hubungi Deni", icon: "📧", desc: "Kontak & media sosial" },
+  { cmd: "clear", label: "Clear Chat", icon: "🧹", desc: "Bersihkan obrolan" }
 ];
 
 export default function HeroSection() {
@@ -23,62 +23,61 @@ export default function HeroSection() {
   // Command database
   const getCommandOutput = (cmd: string): string[] => {
     switch (cmd.trim()) {
-      case "cat profile.txt":
+      case "Siapa Deni Trio Saputra?":
         return [
-          "deni@antigravity-os:~$ cat profile.txt",
-          "--------------------------------------------------",
-          "  [DEVELOPER PROFILE]",
-          "  Name       : Deni Trio Saputra",
-          "  Role       : Software & Design Partner",
-          "  Location   : Jakarta Selatan, Indonesia",
-          "  Availability: Ready for custom projects & freelancing",
-          "--------------------------------------------------",
-          "  Story: I bridge clean web/mobile code with graphic design",
-          "  and interactive 3D elements. Powered by Antigravity AI."
+          "User: Siapa Deni Trio Saputra?",
+          "AI Agent:",
+          "Deni Trio Saputra adalah seorang Software & Design Partner profesional yang berbasis di Jakarta Selatan, Indonesia.",
+          "Ia terampil menjembatani kode pemrograman web/mobile dengan seni desain grafis & pemodelan 3D interaktif.",
+          "",
+          "🚀 Fokus Utama: Membangun produk digital yang bersih, modern, dan scalable.",
+          "💡 Filosofi   : Menyeimbangkan performa kode tingkat tinggi dengan estetika visual premium."
         ];
-      case "antigravity --skills":
+      case "Apa keahlian teknis Deni?":
         return [
-          "deni@antigravity-os:~$ antigravity --skills",
-          "Scanning developer competencies...",
-          "==================================================",
-          "  [MODULE]            [COMPETENCY LEVEL]",
-          "  Web Programming     [████████████████████] 100%",
-          "  Flutter Mobile Dev  [████████████████░░░░] 80%",
-          "  3D Asset Blender    [██████████████░░░░░] 70%",
-          "  Unity Game / XR     [████████████░░░░░░░] 60%",
-          "  Arduino Physical    [██████████████░░░░░] 70%",
-          "==================================================",
-          "All integrated subsystems operational."
+          "User: Apa keahlian teknis Deni?",
+          "AI Agent:",
+          "Melakukan pemindaian sistem keahlian Deni Trio Saputra...",
+          "──────────────────────────────────────────────────",
+          "  • Web Programming   : React, TypeScript, Next.js, Laravel, Node.js [100%]",
+          "  • Mobile Dev        : Flutter, Cross-Platform App Integration [80%]",
+          "  • Design & 3D Art   : Figma UI/UX, Adobe Illustrator, Blender [70%]",
+          "  • Game & XR         : Unity Engine, Interactive Gaming Systems [60%]",
+          "  • Microcontroller   : Arduino physical computing, IoT hardware [70%]",
+          "──────────────────────────────────────────────────",
+          "Semua modul keahlian aktif dan berjalan optimal."
         ];
-      case "antigravity --projects":
+      case "Tampilkan proyek terbaru":
         return [
-          "deni@antigravity-os:~$ antigravity --projects",
-          "Fetching active repository listings...",
-          "--------------------------------------------------",
-          "  1. Oryza Lokabasa       - Next.js regional language hub",
-          "  2. Padjajaran Silat Sys - Laravel organization portal",
-          "  3. Campus Profile Web   - React/Vite responsive landing page",
-          "  4. UI/UX Figma Case     - Mobile interactive mockup design",
-          "--------------------------------------------------",
-          "Type '/projects' on address bar to see screenshots."
+          "User: Tampilkan proyek terbaru",
+          "AI Agent:",
+          "Menghubungkan ke database portofolio...",
+          "Berikut adalah beberapa proyek unggulan dari Deni:",
+          "──────────────────────────────────────────────────",
+          "  1. Oryza Lokabasa       - Hub pelestarian bahasa daerah (Next.js & PostgreSQL)",
+          "  2. Padjajaran Silat Sys - Portal manajemen organisasi silat (Laravel & MySQL)",
+          "  3. Campus Profile Web   - Landing page responsif kemahasiswaan (React & Vite)",
+          "  4. UI/UX Figma Case     - Prototipe interaktif desain aplikasi mobile",
+          "──────────────────────────────────────────────────",
+          "Anda dapat menavigasi ke halaman 'Portfolio' di atas untuk detail selengkapnya."
         ];
-      case "sysinfo":
+      case "Bagaimana cara menghubungi Deni?":
         return [
-          "deni@antigravity-os:~$ sysinfo",
-          "--------------------------------------------------",
-          "  OS NAME      : Antigravity OS v2.9-stable",
-          "  TERMINAL     : xterm-256color",
-          "  SHELL        : antigravity-sh 1.0.4",
-          "  ENGINE       : React 19 + NextJS 16",
-          "  CONNECTION   : SECURE PORT 3000 (active dev)",
-          "  CO-PILOT     : Antigravity AI ONLINE",
-          "  SYSTEM TIME  : " + new Date().toLocaleString(),
-          "--------------------------------------------------"
+          "User: Bagaimana cara menghubungi Deni?",
+          "AI Agent:",
+          "Berikut adalah detail kontak resmi Deni Trio Saputra:",
+          "──────────────────────────────────────────────────",
+          "  📧 Email      : denisptra@my.id",
+          "  🌐 Website    : https://denisptra.my.id",
+          "  🐙 GitHub     : https://github.com/denisptra",
+          "  💼 LinkedIn   : Deni Trio Saputra",
+          "──────────────────────────────────────────────────",
+          "Anda juga dapat mengirimkan pesan langsung lewat formulir di halaman 'Contact'."
         ];
       default:
         return [
-          `deni@antigravity-os:~$ ${cmd}`,
-          `Command not found: ${cmd}. Type clear or select a preset.`
+          `User: ${cmd}`,
+          `AI Agent: Maaf, saya tidak menemukan informasi untuk pencarian "${cmd}". Silakan pilih preset di bawah.`
         ];
     }
   };
@@ -100,11 +99,11 @@ export default function HeroSection() {
     for (let i = 0; i < cmdText.length; i++) {
       typed += cmdText[i];
       setCurrentInput(typed);
-      await new Promise((resolve) => setTimeout(resolve, 30));
+      await new Promise((resolve) => setTimeout(resolve, 20));
     }
 
     // Add delay before displaying output
-    await new Promise((resolve) => setTimeout(resolve, 150));
+    await new Promise((resolve) => setTimeout(resolve, 200));
 
     const output = getCommandOutput(cmdText);
     setHistory((prev) => [...prev, ...output]);
@@ -115,16 +114,12 @@ export default function HeroSection() {
   // Boot sequence on mount
   useEffect(() => {
     const bootSequence = [
-      "Initializing Antigravity OS v2.9-stable...",
-      "[ OK ] Verifying memory sectors...",
-      "[ OK ] Loading module: CORE_REACT_RENDERER",
-      "[ OK ] Loading module: FLUTTER_MOBILE_INTEGRATION",
-      "[ OK ] Loading module: UNITY_WEBGL_SYSTEM",
-      "[ OK ] Loading module: BLENDER_3D_SHADER_ENGINE",
-      "[ OK ] Connected to Co-Pilot: ANTIGRAVITY AI",
-      "==================================================",
-      "Welcome, Deni. Tactical developer telemetry loaded.",
-      "Select dynamic presets below to query database."
+      "Initializing Antigravity AI CLI v1.0.0...",
+      "[ OK ] Menghubungkan ke sistem kecerdasan buatan...",
+      "[ OK ] Memuat basis data profil Deni Trio Saputra...",
+      "──────────────────────────────────────────────────",
+      "AI Agent: Halo! Saya adalah asisten virtual portofolio Deni.",
+      "Tanyakan apa saja mengenai profil, keahlian, atau proyek Deni di bawah ini!"
     ];
     setHistory(bootSequence);
   }, []);
@@ -135,13 +130,44 @@ export default function HeroSection() {
   }, [history, currentInput]);
 
   return (
-    <div className="hero-section pt-10 md:pt-20 pb-20 border-b border-[#eef0f2] bg-white relative">
+    <div className="hero-section pt-10 md:pt-20 pb-20 border-b border-[#eef0f2] bg-white relative overflow-hidden">
       {/* Grid background */}
       <div className="hero-grid-pattern" />
 
       {/* Floating background bubbles */}
       <div className="bubble w-52 h-52 top-10 left-[5%]" />
       <div className="bubble w-72 h-72 top-[20%] right-[10%]" style={{ animationDelay: "3s" }} />
+
+      {/* Floating Notion-like Emojis/Icons */}
+      <div className="hidden lg:block select-none pointer-events-none">
+        {/* Left Side Floating Icons */}
+        <div className="absolute top-[12%] left-[8%] animate-float-slow bg-white shadow-[0_8px_30px_rgba(0,0,0,0.06)] border border-[#eef0f2] w-12 h-12 rounded-2xl flex items-center justify-center text-xl z-10 opacity-60 hover:opacity-100 transition-opacity duration-300">
+          🚀
+        </div>
+        <div className="absolute top-[32%] left-[4%] animate-float-medium bg-white shadow-[0_8px_30px_rgba(0,0,0,0.06)] border border-[#eef0f2] w-14 h-14 rounded-2xl flex items-center justify-center text-2xl z-10 opacity-60 hover:opacity-100 transition-opacity duration-300">
+          💻
+        </div>
+        <div className="absolute top-[52%] left-[9%] animate-float-fast bg-white shadow-[0_8px_30px_rgba(0,0,0,0.06)] border border-[#eef0f2] w-12 h-12 rounded-2xl flex items-center justify-center text-xl z-10 opacity-60 hover:opacity-100 transition-opacity duration-300">
+          🎨
+        </div>
+        <div className="absolute top-[75%] left-[5%] animate-float-slow bg-white shadow-[0_8px_30px_rgba(0,0,0,0.06)] border border-[#eef0f2] w-13 h-13 rounded-2xl flex items-center justify-center text-xl z-10 opacity-60 hover:opacity-100 transition-opacity duration-300">
+          💡
+        </div>
+
+        {/* Right Side Floating Icons */}
+        <div className="absolute top-[15%] right-[6%] animate-float-medium bg-white shadow-[0_8px_30px_rgba(0,0,0,0.06)] border border-[#eef0f2] w-13 h-13 rounded-2xl flex items-center justify-center text-xl z-10 opacity-60 hover:opacity-100 transition-opacity duration-300">
+          📝
+        </div>
+        <div className="absolute top-[35%] right-[9%] animate-float-slow bg-white shadow-[0_8px_30px_rgba(0,0,0,0.06)] border border-[#eef0f2] w-12 h-12 rounded-2xl flex items-center justify-center text-xl z-10 opacity-60 hover:opacity-100 transition-opacity duration-300">
+          📱
+        </div>
+        <div className="absolute top-[55%] right-[4%] animate-float-fast bg-white shadow-[0_8px_30px_rgba(0,0,0,0.06)] border border-[#eef0f2] w-14 h-14 rounded-2xl flex items-center justify-center text-2xl z-10 opacity-60 hover:opacity-100 transition-opacity duration-300">
+          ⚡
+        </div>
+        <div className="absolute top-[72%] right-[8%] animate-float-medium bg-white shadow-[0_8px_30px_rgba(0,0,0,0.06)] border border-[#eef0f2] w-12 h-12 rounded-2xl flex items-center justify-center text-xl z-10 opacity-60 hover:opacity-100 transition-opacity duration-300">
+          🎓
+        </div>
+      </div>
 
       <div className="relative z-10 max-w-8xl mx-auto px-3 text-center">
         {/* Availability Badge */}
@@ -186,16 +212,10 @@ export default function HeroSection() {
         <div className="relative max-w-5xl mx-auto animate-in fade-in slide-in-from-bottom-8 duration-1000 px-2 sm:px-0">
           
           {/* Terminal Box Wrapper */}
-          <div className="bg-[#090d16] rounded-2xl border border-cyan-500/20 shadow-[0_20px_50px_rgba(6,182,212,0.15)] overflow-hidden text-left relative">
-            
-            {/* CRT Monitor scanline effect overlay */}
-            <div className="absolute inset-0 bg-linear-to-b from-transparent to-black/10 pointer-events-none z-20 [background-size:100%_4px]" />
-            
-            {/* Glossy top reflection */}
-            <div className="absolute top-0 inset-x-0 h-40 bg-gradient-to-b from-white/3 to-transparent pointer-events-none z-20" />
+          <div className="bg-[#fafafa] rounded-2xl border border-[#eef0f2] shadow-[0_15px_40px_rgba(0,0,0,0.06)] overflow-hidden text-left relative">
 
             {/* Terminal Window Header */}
-            <div className="bg-[#0f1626] border-b border-cyan-500/10 px-5 py-4 flex items-center justify-between relative z-30 select-none">
+            <div className="bg-[#f1f1ef]/85 border-b border-[#eef0f2] px-5 py-4 flex items-center justify-between relative z-30 select-none">
               
               {/* Window controls */}
               <div className="flex items-center space-x-2.5">
@@ -205,36 +225,38 @@ export default function HeroSection() {
               </div>
 
               {/* Window Title */}
-              <div className="text-[10px] font-mono font-bold text-cyan-400/60 uppercase tracking-widest flex items-center space-x-2">
-                <Terminal size={12} className="text-cyan-400 animate-pulse" />
+              <div className="text-[10px] font-mono font-bold text-[#37352f]/60 uppercase tracking-widest flex items-center space-x-2">
+                <Terminal size={12} className="text-[#37352f]/70" />
                 <span>antigravity-terminal-sh - deni@antigravity</span>
               </div>
 
               {/* Status indicator */}
-              <div className="flex items-center space-x-2 font-mono text-[9px] text-cyan-400">
-                <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-ping" />
+              <div className="flex items-center space-x-2 font-mono text-[9px] text-[#37352f]/60">
+                <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
                 <span className="hidden sm:inline opacity-80 uppercase tracking-wider font-extrabold text-[8px]">Session OK</span>
               </div>
             </div>
 
             {/* Terminal Output Area */}
-            <div className="p-6 sm:p-8 h-[320px] overflow-y-auto font-mono text-xs sm:text-[13px] text-slate-300 leading-relaxed space-y-2 select-text custom-scrollbar z-10 relative">
+            <div className="p-6 sm:p-8 h-[320px] overflow-y-auto font-mono text-xs sm:text-[13px] text-[#37352f]/85 leading-relaxed space-y-2 select-text custom-scrollbar z-10 relative">
               
               {/* History outputs */}
               {history.map((line, idx) => {
-                let colorClass = "text-slate-300";
-                if (line.startsWith("deni@antigravity-os:~$")) {
-                  colorClass = "text-cyan-400 font-extrabold";
+                let colorClass = "text-[#37352f]/80";
+                if (line.startsWith("User:")) {
+                  colorClass = "text-[#1F9CF0] font-black mt-3";
+                } else if (line.startsWith("AI Agent:")) {
+                  colorClass = "text-[#37352f] font-black tracking-tight mt-2";
                 } else if (line.startsWith("[ OK ]")) {
-                  colorClass = "text-emerald-400 font-bold";
-                } else if (line.startsWith("==") || line.startsWith("--")) {
-                  colorClass = "text-cyan-500/40";
-                } else if (line.includes("Name") || line.includes("Role") || line.includes("Location")) {
-                  colorClass = "text-cyan-200/90";
-                } else if (line.includes("[MODULE]")) {
-                  colorClass = "text-cyan-400/80 font-black uppercase tracking-wider";
-                } else if (line.includes("v2.9-stable") || line.includes("antigravity-sh")) {
-                  colorClass = "text-indigo-300";
+                  colorClass = "text-emerald-600 font-bold";
+                } else if (line.startsWith("==") || line.startsWith("--") || line.startsWith("──") || line.startsWith("───")) {
+                  colorClass = "text-[#37352f]/10";
+                } else if (line.includes("•")) {
+                  colorClass = "text-[#37352f]/85 pl-2 font-mono";
+                } else if (line.includes("1.") || line.includes("2.") || line.includes("3.") || line.includes("4.")) {
+                  colorClass = "text-[#37352f]/85 pl-2 font-mono";
+                } else if (line.startsWith("Initializing") || line.startsWith("Melakukan") || line.startsWith("Menghubungkan")) {
+                  colorClass = "text-[#787774]/70 italic";
                 }
 
                 return (
@@ -245,18 +267,18 @@ export default function HeroSection() {
               })}
 
               {/* Active input line typing animation */}
-              <div className="text-cyan-400 font-extrabold flex items-center">
-                <span>deni@antigravity-os:~$ </span>
-                <span className="text-slate-100 ml-2 whitespace-pre">{currentInput}</span>
-                <span className="ml-1 w-2.5 h-4.5 bg-cyan-400 inline-block animate-pulse" />
+              <div className="text-[#1F9CF0] font-black flex items-center mt-3">
+                <span>User: </span>
+                <span className="text-[#37352f] ml-2 whitespace-pre">{currentInput}</span>
+                <span className="ml-1 w-2.5 h-4.5 bg-[#37352f] inline-block animate-pulse" />
               </div>
 
               <div ref={terminalEndRef} />
             </div>
 
             {/* Preset Tactical Command Panel (Interactive buttons under terminal) */}
-            <div className="bg-[#0f1626]/80 backdrop-blur-md border-t border-cyan-500/10 p-5 relative z-30 select-none">
-              <div className="text-[9px] font-mono font-black uppercase tracking-widest text-cyan-500/40 mb-3.5">
+            <div className="bg-[#f1f1ef]/40 backdrop-blur-md border-t border-[#eef0f2] p-5 relative z-30 select-none">
+              <div className="text-[9px] font-mono font-black uppercase tracking-widest text-[#37352f]/40 mb-3.5">
                 EXECUTE TELEMETRY COMMANDS
               </div>
               <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-3">
@@ -265,7 +287,7 @@ export default function HeroSection() {
                     key={item.cmd}
                     disabled={isTyping}
                     onClick={() => runCommand(item.cmd)}
-                    className={`px-4 py-2.5 bg-slate-900/50 hover:bg-[#1F9CF0]/10 border border-cyan-500/10 hover:border-[#1F9CF0]/40 text-cyan-400 hover:text-white rounded-lg text-left sm:text-center text-[10px] font-mono font-bold tracking-wider transition-all flex items-center gap-2 shadow-xs cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed`}
+                    className="px-4 py-2.5 bg-white hover:bg-slate-50 border border-[#eef0f2] text-[#37352f] rounded-xl text-left sm:text-center text-[10px] font-mono font-bold tracking-wider transition-all flex items-center gap-2 shadow-2xs hover:shadow-xs cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     <span>{item.icon}</span>
                     <span>{item.label}</span>

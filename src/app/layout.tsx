@@ -11,6 +11,11 @@ export const metadata: Metadata = {
   title: "Deni Trio Saputra | Portfolio",
   description:
     "Portfolio Deni Trio Saputra, Junior Web Developer, UI/UX Designer, and Graphic Designer. Building modern websites, admin dashboards, and digital designs.",
+  icons: {
+    icon: "/Deni.png",
+    shortcut: "/Deni.png",
+    apple: "/Deni.png",
+  },
   keywords: [
     "Deni Trio Saputra",
     "Portfolio",

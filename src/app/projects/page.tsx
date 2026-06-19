@@ -30,7 +30,7 @@ export default function ProjectsPage() {
             {isLoading ? (
               <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                 {[1, 2, 3, 4].map((r, idx) => (
-                  <div key={idx} className="h-96 bg-gray-50 rounded-[2rem] animate-pulse" />
+                  <div key={idx} className="h-96 bg-gray-50 rounded-3xl animate-pulse" />
                 ))}
               </div>
             ) : (
