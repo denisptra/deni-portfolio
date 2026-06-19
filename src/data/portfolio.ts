@@ -357,7 +357,7 @@ export const defaultData: LocalDatabase = {
       },
       description: {
         en: "Official portal for Padepokan Pencak Silat Padjadjaran Pusat. An organizational website preserving the art of Pencak Silat heritage since 1970 with member management and event registration.",
-        id: "Portal resmi Padepokan Pencak Silat Padjadjaran Pusat. Website organisasi yang melestarikan seni pencak silat warisan sejak 1970 dengan manajemen anggota dan pendaftaran kegiatan.",
+        id: "Portal resmi Padepokan Pencak Silat Padjadjaran Pusat. Website organisasi yang melestarikan seni pencak silat warisan luhur nusantara sejak 1970 dengan manajemen anggota dan pendaftaran kegiatan.",
       },
       imageUrl: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=600&auto=format&fit=crop",
       link: "https://padjadjaranpusat.org/",
@@ -366,7 +366,7 @@ export const defaultData: LocalDatabase = {
     {
       id: "agrowisata-darangdan",
       title: {
-        en: "Agrowisata Darangdan",
+        en: "Darangdan Agrotourism",
         id: "Agrowisata Darangdan",
       },
       description: {
@@ -381,11 +381,11 @@ export const defaultData: LocalDatabase = {
       id: "artics-digital-strategy",
       title: {
         en: "Artics Digital Strategy",
-        id: "Artics Digital Strategy",
+        id: "Artics Strategi Digital",
       },
       description: {
         en: "A corporate digital strategy landing page with clean modern aesthetics, built with React.js for a professional frontend experience.",
-        id: "Landing page strategi digital korporat dengan estetika modern yang bersih, dibangun dengan React.js untuk pengalaman frontend profesional.",
+        id: "Landing page strategi digital korporat dengan estetika modern yang bersih, dibangun dengan React.js untuk pengalaman frontend yang profesional.",
       },
       imageUrl: "https://denisptra.notion.site/image/attachment%3Ade2c0e10-bb1e-44ba-a589-2b3d6e8ab6e3%3AScreenshot_2026-04-27_194952.png?table=block&id=34f93480-d049-808e-a236-e717600a6c9e&spaceId=f9ddd867-7794-4081-bc5e-9fb1766f1385&width=600",
       link: "https://github.com/denisptra",
@@ -395,7 +395,7 @@ export const defaultData: LocalDatabase = {
       id: "super-league-indonesia",
       title: {
         en: "Super League Indonesia",
-        id: "Super League Indonesia",
+        id: "Liga Super Indonesia",
       },
       description: {
         en: "A football league information platform with backend API, database management, and responsive UI design for displaying match data and team standings.",
@@ -408,12 +408,12 @@ export const defaultData: LocalDatabase = {
     {
       id: "fetch-api-bmkg",
       title: {
-        en: "Fetch API BMKG",
-        id: "Fetch API BMKG",
+        en: "BMKG Weather Fetch API",
+        id: "Fetch API Cuaca BMKG",
       },
       description: {
         en: "A weather information web app that fetches real-time data from the Indonesian Meteorological Agency (BMKG) API, displaying forecasts with a clean React interface.",
-        id: "Aplikasi web informasi cuaca yang mengambil data real-time dari API BMKG, menampilkan prakiraan cuaca dengan antarmuka React yang bersih.",
+        id: "Aplikasi web informasi cuaca yang mengambil data real-time dari API Badan Meteorologi, Klimatologi, dan Geofisika (BMKG), menampilkan prakiraan cuaca dengan antarmuka React yang bersih.",
       },
       imageUrl: "https://denisptra.notion.site/image/attachment%3A7047eb93-d0a8-48e6-88e5-a5e83ba0beb8%3AScreenshot_2026-04-27_195640.png?table=block&id=34f93480-d049-80da-9c55-e4e494b8f71a&spaceId=f9ddd867-7794-4081-bc5e-9fb1766f1385&width=600",
       link: "https://github.com/denisptra",
@@ -422,8 +422,8 @@ export const defaultData: LocalDatabase = {
     {
       id: "community-profile",
       title: {
-        en: "Community Profile",
-        id: "Community Profile",
+        en: "Community Profile Website",
+        id: "Website Profil Komunitas",
       },
       description: {
         en: "A full-stack community profile web application with Laravel backend, MySQL database, and comprehensive UI/UX design for organizational management.",
@@ -436,12 +436,12 @@ export const defaultData: LocalDatabase = {
     {
       id: "nukang",
       title: {
-        en: "Nukang",
-        id: "Nukang",
+        en: "Nukang - Service Marketplace",
+        id: "Nukang - Marketplace Jasa",
       },
       description: {
         en: "A service marketplace platform connecting users with skilled workers (tukang), featuring UI/UX design and Laravel-based backend architecture.",
-        id: "Platform marketplace layanan yang menghubungkan pengguna dengan tenaga kerja terampil (tukang), dengan desain UI/UX dan arsitektur backend berbasis Laravel.",
+        id: "Platform marketplace jasa yang menghubungkan pengguna dengan tenaga kerja terampil (tukang), dilengkapi desain UI/UX dan arsitektur backend berbasis Laravel.",
       },
       imageUrl: "https://denisptra.notion.site/image/attachment%3Ac6b6e37b-d7ec-410a-a31a-8c00d782460b%3ALanding_Page_(2).png?table=block&id=34f93480-d049-806f-bea7-dc228845865a&spaceId=f9ddd867-7794-4081-bc5e-9fb1766f1385&width=600",
       link: "https://github.com/denisptra",
@@ -450,8 +450,8 @@ export const defaultData: LocalDatabase = {
     {
       id: "crane-robotic",
       title: {
-        en: "Crane Robotic",
-        id: "Crane Robotic",
+        en: "Robotic Crane",
+        id: "Crane Robotik",
       },
       description: {
         en: "An Arduino-powered robotic crane project combining hardware engineering with software control systems for automated material handling.",
@@ -464,8 +464,8 @@ export const defaultData: LocalDatabase = {
     {
       id: "museum-game",
       title: {
-        en: "Museum Game",
-        id: "Museum Game",
+        en: "Museum Exploration Game",
+        id: "Game Eksplorasi Museum",
       },
       description: {
         en: "An interactive museum exploration game built with Unity, allowing players to explore virtual museum environments with immersive 3D experiences.",
@@ -478,8 +478,8 @@ export const defaultData: LocalDatabase = {
     {
       id: "kapur-game",
       title: {
-        en: "Kapur Game",
-        id: "Kapur Game",
+        en: "Kapur Interactive Game",
+        id: "Game Interaktif Kapur",
       },
       description: {
         en: "A creative interactive game developed in Unity featuring unique gameplay mechanics and engaging visual design for an immersive gaming experience.",
@@ -492,8 +492,8 @@ export const defaultData: LocalDatabase = {
     {
       id: "168-transportasi",
       title: {
-        en: "168 Transportasi",
-        id: "168 Transportasi",
+        en: "168 Transportation App",
+        id: "Aplikasi 168 Transportasi",
       },
       description: {
         en: "A transportation mobile app UI/UX design project with complete user flow, wireframes, and high-fidelity prototypes designed in Figma.",
@@ -506,8 +506,8 @@ export const defaultData: LocalDatabase = {
     {
       id: "sports-apps",
       title: {
-        en: "Sports Apps",
-        id: "Sports Apps",
+        en: "Sports Mobile App Design",
+        id: "Desain Aplikasi Mobile Olahraga",
       },
       description: {
         en: "A sports-themed mobile application UI/UX design featuring intuitive navigation, activity tracking interfaces, and modern visual design in Figma.",
@@ -520,8 +520,8 @@ export const defaultData: LocalDatabase = {
     {
       id: "phalanxium",
       title: {
-        en: "Phalanxium",
-        id: "Phalanxium",
+        en: "Phalanxium Web Design",
+        id: "Desain Web Phalanxium",
       },
       description: {
         en: "A waitlist web design project for Phalanxium platform, featuring sleek modern UI/UX design with interactive elements and professional aesthetics.",
@@ -537,7 +537,7 @@ export const defaultData: LocalDatabase = {
       id: "exp-1",
       title: {
         en: "Junior Web Developer",
-        id: "Junior Web Developer",
+        id: "Pengembang Web Junior",
       },
       company: "Freelance",
       location: "Jakarta Selatan, Indonesia",
@@ -567,7 +567,7 @@ export const defaultData: LocalDatabase = {
       id: "exp-3",
       title: {
         en: "Active Student Staff",
-        id: "Anggota Staf Aktif",
+        id: "Staf Mahasiswa Aktif",
       },
       company: "Campus Student Organization",
       location: "Jakarta, Indonesia",
@@ -591,7 +591,7 @@ export const defaultData: LocalDatabase = {
       period: "2023 - Present",
       description: {
         en: "Enrolled in Bachelor of Computer Science program, studying algorithms, information systems management, and project execution methodologies.",
-        id: "Menempuh pendidikan jenjang Sarjana Komputer, mempelajari algoritma pemrograman, manajemen sistem informasi, dan metodologi proyek.",
+        id: "Menempuh pendidikan jenjang Sarjana Komputer, mempelajari algoritma pemrograman, manajemen sistem informasi, dan metodologi pelaksanaan proyek.",
       },
       iconType: "university",
     },
@@ -613,8 +613,8 @@ export const defaultData: LocalDatabase = {
     {
       id: "edu-3",
       title: {
-        en: "Senior High School Science Student",
-        id: "Siswa SMA Peminatan IPA",
+        en: "Senior High School - Science Major",
+        id: "SMA - Peminatan IPA",
       },
       institution: "Senior High School",
       location: "Lampung, Indonesia",
@@ -690,14 +690,14 @@ export const defaultData: LocalDatabase = {
     {
       id: "ach-5",
       title: {
-        en: "Short Film Jury",
-        id: "Juri Film Pendek",
+        en: "Short Film Festival Jury",
+        id: "Juri Festival Film Pendek",
       },
       date: "2024",
       issuer: "Festival Film",
       description: {
         en: "Selected as a jury member for a short film festival, evaluating cinematography, storytelling, and creative direction of competing entries.",
-        id: "Terpilih sebagai anggota juri festival film pendek, mengevaluasi sinematografi, penceritaan, dan arahan kreatif dari karya peserta.",
+        id: "Terpilih sebagai anggota juri festival film pendek, mengevaluasi sinematografi, penceritaan, dan arahan kreatif dari karya-karya peserta.",
       },
       icon: "award",
       link: "https://drive.google.com/file/d/1mxUla2Ro9fiDVlbeC9VxltDsOgUywYpZ/view?usp=sharing",
@@ -720,8 +720,8 @@ export const defaultData: LocalDatabase = {
     {
       id: "ach-7",
       title: {
-        en: "UI/UX Learning Certificate",
-        id: "Pembelajaran UI UX",
+        en: "UI/UX Design Learning Certificate",
+        id: "Sertifikat Pembelajaran Desain UI/UX",
       },
       date: "2023",
       issuer: "Online Academy",
@@ -736,7 +736,7 @@ export const defaultData: LocalDatabase = {
       id: "ach-8",
       title: {
         en: "Head of Media & Information",
-        id: "Kepala Media & Informasi",
+        id: "Kepala Divisi Media & Informasi",
       },
       date: "2024",
       issuer: "Campus Student Organization",
