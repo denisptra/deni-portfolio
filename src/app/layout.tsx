@@ -48,8 +48,6 @@ export const metadata: Metadata = {
   },
 };
 
-import { AppProvider } from "@/context/AppContext";
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -58,11 +56,8 @@ export default function RootLayout({
   return (
     <html lang="en" className="light">
       <body className={`${inter.variable} font-sans antialiased`}>
-        <AppProvider>
-          {children}
-        </AppProvider>
+        {children}
       </body>
     </html>
   );
 }
-

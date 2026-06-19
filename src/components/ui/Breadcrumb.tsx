@@ -8,17 +8,20 @@ export default function Breadcrumb() {
   const pathname = usePathname();
   const segments = pathname.split("/").filter(Boolean);
 
-  if (segments.length === 0) return null;
+  if (segments.length <= 1) return null; // Jika hanya "/" atau "/[lang]", sembunyikan breadcrumbs
+
+  const lang = segments[0];
+  const pageSegments = segments.slice(1);
 
   return (
     <nav className="flex items-center space-x-2 text-xs font-semibold text-gray-400 mb-8 uppercase tracking-widest animate-in fade-in slide-in-from-left-2 duration-300">
-      <Link href="/" className="flex items-center hover:text-black transition-colors">
+      <Link href={`/${lang}`} className="flex items-center hover:text-black transition-colors">
         <Home size={14} className="mr-1.5" />
         Home
       </Link>
-      {segments.map((segment, index) => {
-        const isLast = index === segments.length - 1;
-        const href = `/${segments.slice(0, index + 1).join("/")}`;
+      {pageSegments.map((segment, index) => {
+        const isLast = index === pageSegments.length - 1;
+        const href = `/${lang}/${pageSegments.slice(0, index + 1).join("/")}`;
         const label = segment.replace(/-/g, " ");
 
         return (

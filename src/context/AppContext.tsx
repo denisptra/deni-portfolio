@@ -14,24 +14,27 @@ interface AppContextType {
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
 
-export function AppProvider({ children }: { children: ReactNode }) {
-  const [lang, setLangState] = useState<"en" | "id">("en");
+export function AppProvider({ children, initialLang = "en" }: { children: ReactNode, initialLang?: "en" | "id" }) {
+  const [lang, setLangState] = useState<"en" | "id">(initialLang);
   const [data, setData] = useState<LocalDatabase>(defaultData);
   const [isLoading, setIsLoading] = useState(true);
 
-  // Initialize lang from localStorage (client-side only)
+  // Sync lang state if initialLang prop changes (e.g. navigation)
   useEffect(() => {
-    const savedLang = localStorage.getItem("app_lang") as "en" | "id";
-    if (savedLang === "en" || savedLang === "id") {
-      setTimeout(() => {
-        setLangState(savedLang);
-      }, 0);
-    }
-  }, []);
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setLangState(initialLang);
+    document.documentElement.lang = initialLang;
+  }, [initialLang]);
 
   const setLang = (newLang: "en" | "id") => {
     setLangState(newLang);
     localStorage.setItem("app_lang", newLang);
+    // Optionally redirect to the new lang path
+    const currentPath = window.location.pathname;
+    const newPath = currentPath.replace(/^\/(en|id)/, `/${newLang}`);
+    if (newPath !== currentPath) {
+      window.location.href = newPath;
+    }
   };
 
   useEffect(() => {

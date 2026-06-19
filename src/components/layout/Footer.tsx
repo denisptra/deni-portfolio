@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useApp } from "@/context/AppContext";
 
 export default function Footer() {
-  const { t } = useApp();
+  const { lang, t } = useApp();
   const currentYear = new Date().getFullYear();
 
   return (
@@ -14,7 +14,7 @@ export default function Footer() {
           {/* Brand Introduction */}
           <div className="col-span-1 lg:col-span-1 space-y-7">
             <div>
-              <Link href="/" className="flex items-center mb-6 font-bold tracking-tight text-[#37352f] text-sm">
+              <Link href={`/${lang}`} className="flex items-center mb-6 font-bold tracking-tight text-[#37352f] text-sm">
                 <div className="w-7 h-7 bg-black rounded flex items-center justify-center text-white mr-2.5 font-black text-xs leading-none">
                   D
                 </div>
@@ -33,32 +33,32 @@ export default function Footer() {
             </h4>
             <ul className="space-y-3.5 text-[12px] font-semibold text-[#37352f]/60">
               <li>
-                <Link href="/about" className="hover:text-black transition-colors">
+                <Link href={`/${lang}/about`} className="hover:text-black transition-colors">
                   {t.nav.about}
                 </Link>
               </li>
               <li>
-                <Link href="/experience" className="hover:text-black transition-colors">
+                <Link href={`/${lang}/experience`} className="hover:text-black transition-colors">
                   {t.nav.experience}
                 </Link>
               </li>
               <li>
-                <Link href="/study" className="hover:text-black transition-colors">
+                <Link href={`/${lang}/study`} className="hover:text-black transition-colors">
                   {t.nav.education}
                 </Link>
               </li>
               <li>
-                <Link href="/projects" className="hover:text-black transition-colors">
+                <Link href={`/${lang}/projects`} className="hover:text-black transition-colors">
                   {t.nav.portfolio}
                 </Link>
               </li>
               <li>
-                <Link href="/achievements" className="hover:text-black transition-colors">
+                <Link href={`/${lang}/achievements`} className="hover:text-black transition-colors">
                   {t.nav.achievements}
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-black transition-colors">
+                <Link href={`/${lang}/contact`} className="hover:text-black transition-colors">
                   {t.nav.contact}
                 </Link>
               </li>
@@ -116,12 +116,12 @@ export default function Footer() {
             </h4>
             <ul className="space-y-3.5 text-[12px] font-semibold text-[#37352f]/60">
               <li>
-                <Link href="/privacy" className="hover:text-black transition-colors">
+                <Link href={`/${lang}/privacy`} className="hover:text-black transition-colors">
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link href="/terms" className="hover:text-black transition-colors">
+                <Link href={`/${lang}/terms`} className="hover:text-black transition-colors">
                   Terms of Service
                 </Link>
               </li>

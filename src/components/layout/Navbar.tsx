@@ -19,7 +19,7 @@ export default function Navbar() {
     <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-[#eef0f2]">
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo / Brand Name */}
-        <Link href="/" className="flex items-center group">
+        <Link href={`/${lang}`} className="flex items-center group">
           <div className="w-8 h-8 flex items-center justify-center group-hover:rotate-45 transition-transform duration-500">
             <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
@@ -39,17 +39,17 @@ export default function Navbar() {
         {/* Desktop Links */}
         <div className="hidden md:flex items-center space-x-8 text-[13px] font-medium text-[#7a7872]">
           <Link
-            href="/about"
+            href={`/${lang}/about`}
             className={`hover:text-black transition-colors ${
-              isActive("/about") ? "text-black font-bold" : ""
+              isActive(`/${lang}/about`) ? "text-black font-bold" : ""
             }`}
           >
             {t.nav.about}
           </Link>
           <Link
-            href="/experience"
+            href={`/${lang}/experience`}
             className={`hover:text-black transition-colors ${
-              isActive("/experience") ? "text-black font-bold" : ""
+              isActive(`/${lang}/experience`) ? "text-black font-bold" : ""
             }`}
           >
             {t.nav.experience}
@@ -63,7 +63,7 @@ export default function Navbar() {
           >
             <button
               className={`flex items-center hover:text-black transition-colors py-2 ${
-                isActive("/study") || isActive("/projects") || isActive("/achievements")
+                isActive(`/${lang}/study`) || isActive(`/${lang}/projects`) || isActive(`/${lang}/achievements`)
                   ? "text-black font-bold"
                   : ""
               }`}
@@ -84,7 +84,7 @@ export default function Navbar() {
             >
               <div className="bg-white border border-[#eef0f2] rounded-2xl shadow-xl shadow-black/5 p-2">
                 <Link
-                  href="/study"
+                  href={`/${lang}/study`}
                   className="flex items-start space-x-4 p-3 hover:bg-blue-50 rounded-xl group transition-colors"
                 >
                   <div className="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center text-blue-600 transition-colors group-hover:bg-blue-600 group-hover:text-white">
@@ -101,7 +101,7 @@ export default function Navbar() {
                 </Link>
 
                 <Link
-                  href="/projects"
+                  href={`/${lang}/projects`}
                   className="flex items-start space-x-4 p-3 hover:bg-amber-50 rounded-xl group transition-colors"
                 >
                   <div className="w-10 h-10 rounded-lg bg-amber-100 flex items-center justify-center text-amber-600 transition-colors group-hover:bg-amber-600 group-hover:text-white">
@@ -118,7 +118,7 @@ export default function Navbar() {
                 </Link>
 
                 <Link
-                  href="/achievements"
+                  href={`/${lang}/achievements`}
                   className="flex items-start space-x-4 p-3 hover:bg-emerald-50 rounded-xl group transition-colors"
                 >
                   <div className="w-10 h-10 rounded-lg bg-emerald-100 flex items-center justify-center text-emerald-600 transition-colors group-hover:bg-emerald-600 group-hover:text-white">
@@ -138,9 +138,9 @@ export default function Navbar() {
           </div>
 
           <Link
-            href="/contact"
+            href={`/${lang}/contact`}
             className={`hover:text-black transition-colors ${
-              isActive("/contact") ? "text-black font-bold" : ""
+              isActive(`/${lang}/contact`) ? "text-black font-bold" : ""
             }`}
           >
             {t.nav.contact}
@@ -181,14 +181,14 @@ export default function Navbar() {
       {mobileMenuOpen && (
         <div className="md:hidden bg-white border-t border-[#eef0f2] py-4 px-6 animate-in slide-in-from-top duration-300">
           <Link
-            href="/about"
+            href={`/${lang}/about`}
             className="block py-3 font-bold text-[#37352f] border-b border-[#f9f9f8]"
             onClick={() => setMobileMenuOpen(false)}
           >
             {t.nav.about}
           </Link>
           <Link
-            href="/experience"
+            href={`/${lang}/experience`}
             className="block py-3 font-bold text-[#37352f] border-b border-[#f9f9f8]"
             onClick={() => setMobileMenuOpen(false)}
           >
@@ -212,21 +212,21 @@ export default function Navbar() {
             {mobileExploreOpen && (
               <div className="grid grid-cols-1 gap-1 pb-3 px-4">
                 <Link
-                  href="/study"
+                  href={`/${lang}/study`}
                   className="block py-2 text-[#7a7872] font-semibold text-sm"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {t.nav.education}
                 </Link>
                 <Link
-                  href="/projects"
+                  href={`/${lang}/projects`}
                   className="block py-2 text-[#7a7872] font-semibold text-sm"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {t.nav.portfolio}
                 </Link>
                 <Link
-                  href="/achievements"
+                  href={`/${lang}/achievements`}
                   className="block py-2 text-[#7a7872] font-semibold text-sm"
                   onClick={() => setMobileMenuOpen(false)}
                 >
@@ -237,7 +237,7 @@ export default function Navbar() {
           </div>
 
           <Link
-            href="/contact"
+            href={`/${lang}/contact`}
             className="block py-3 font-bold text-[#37352f]"
             onClick={() => setMobileMenuOpen(false)}
           >

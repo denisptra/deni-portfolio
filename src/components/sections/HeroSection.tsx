@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { ArrowUpRight, Terminal, Cpu, HardDrive, RefreshCw } from "lucide-react";
+import { ArrowUpRight, Terminal } from "lucide-react";
 import { useApp } from "@/context/AppContext";
 
 const PRESET_COMMANDS = [
@@ -14,8 +14,15 @@ const PRESET_COMMANDS = [
 ];
 
 export default function HeroSection() {
-  const { t } = useApp();
-  const [history, setHistory] = useState<string[]>([]);
+  const { lang, t } = useApp();
+  const [history, setHistory] = useState<string[]>([
+    "Initializing Antigravity AI CLI v1.0.0...",
+    "[ OK ] Menghubungkan ke sistem kecerdasan buatan...",
+    "[ OK ] Memuat basis data profil Deni Trio Saputra...",
+    "──────────────────────────────────────────────────",
+    "AI Agent: Halo! Saya adalah asisten virtual portofolio Deni.",
+    "Tanyakan apa saja mengenai profil, keahlian, atau proyek Deni di bawah ini!"
+  ]);
   const [currentInput, setCurrentInput] = useState("");
   const [isTyping, setIsTyping] = useState(false);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -111,18 +118,6 @@ export default function HeroSection() {
     setIsTyping(false);
   };
 
-  // Boot sequence on mount
-  useEffect(() => {
-    const bootSequence = [
-      "Initializing Antigravity AI CLI v1.0.0...",
-      "[ OK ] Menghubungkan ke sistem kecerdasan buatan...",
-      "[ OK ] Memuat basis data profil Deni Trio Saputra...",
-      "──────────────────────────────────────────────────",
-      "AI Agent: Halo! Saya adalah asisten virtual portofolio Deni.",
-      "Tanyakan apa saja mengenai profil, keahlian, atau proyek Deni di bawah ini!"
-    ];
-    setHistory(bootSequence);
-  }, []);
 
   // Scroll to bottom of terminal container when history changes or typing occurs
   useEffect(() => {
@@ -196,13 +191,13 @@ export default function HeroSection() {
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-5 mb-20 animate-in fade-in slide-in-from-bottom-6 duration-1000">
           <Link
-            href="/projects"
+            href={`/${lang}/projects`}
             className="w-full sm:w-auto bg-[#1F9CF0] hover:bg-[#1581cc] text-white px-10 py-3.5 rounded-xl font-bold text-sm transition-all shadow-xl shadow-blue-50/50 text-center hover:scale-102 active:scale-98"
           >
             {t.hero.viewProjects}
           </Link>
           <Link
-            href="/contact"
+            href={`/${lang}/contact`}
             className="w-full sm:w-auto bg-white hover:bg-gray-50 text-[#1F9CF0] px-10 py-3.5 rounded-xl font-bold text-sm transition-all border border-blue-100 flex items-center justify-center hover:scale-102 active:scale-98"
           >
             {t.hero.letsTalk}

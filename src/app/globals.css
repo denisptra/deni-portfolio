@@ -12,6 +12,12 @@
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
   --radius-custom: var(--radius);
+
+  --color-brand-blue: #1F9CF0;
+  --color-notion-gray: #f1f1ef;
+  --color-notion-text: #37352f;
+  --color-notion-border: #eef0f2;
+  --color-notion-gray-text: #787774;
 }
 
 :root {

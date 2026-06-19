@@ -12,7 +12,13 @@
       },
       "imageUrl": "https://denisptra.notion.site/image/attachment%3Ad64a5eb4-4951-48a6-8df8-6c2ebfea7d24%3AIndonesia_Bahasa_Ibu.jpg?table=block&id=34f93480-d049-80b3-9fbc-dc05d462bc02&spaceId=f9ddd867-7794-4081-bc5e-9fb1766f1385&width=600",
       "link": "https://oryzalokabasa.com/",
-      "stack": ["Next.js", "PostgreSQL", "Express.js", "Tailwind CSS", "TypeScript"]
+      "stack": [
+        "Next.js",
+        "PostgreSQL",
+        "Express.js",
+        "Tailwind CSS",
+        "TypeScript"
+      ]
     },
     {
       "id": "pencak-silat-padjajaran",
@@ -26,7 +32,12 @@
       },
       "imageUrl": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=600&auto=format&fit=crop",
       "link": "https://padjadjaranpusat.org/",
-      "stack": ["React", "Vite", "Tailwind CSS", "JavaScript"]
+      "stack": [
+        "React",
+        "Vite",
+        "Tailwind CSS",
+        "JavaScript"
+      ]
     },
     {
       "id": "agrowisata-darangdan",
@@ -40,7 +51,12 @@
       },
       "imageUrl": "https://denisptra.notion.site/image/attachment%3Ab4ac3266-7355-433e-afa1-7b1f0cc78a1c%3AScreenshot_2026-04-25_201757.png?table=block&id=34f93480-d049-8080-9897-de13c459d26a&spaceId=f9ddd867-7794-4081-bc5e-9fb1766f1385&width=600",
       "link": "https://github.com/denisptra",
-      "stack": ["Vite", "JavaScript", "Tailwind CSS", "UI/UX Design"]
+      "stack": [
+        "Vite",
+        "JavaScript",
+        "Tailwind CSS",
+        "UI/UX Design"
+      ]
     },
     {
       "id": "artics-digital-strategy",
@@ -54,7 +70,11 @@
       },
       "imageUrl": "https://denisptra.notion.site/image/attachment%3Ade2c0e10-bb1e-44ba-a589-2b3d6e8ab6e3%3AScreenshot_2026-04-27_194952.png?table=block&id=34f93480-d049-808e-a236-e717600a6c9e&spaceId=f9ddd867-7794-4081-bc5e-9fb1766f1385&width=600",
       "link": "https://github.com/denisptra",
-      "stack": ["React.js", "JavaScript", "CSS"]
+      "stack": [
+        "React.js",
+        "JavaScript",
+        "CSS"
+      ]
     },
     {
       "id": "super-league-indonesia",
@@ -68,7 +88,12 @@
       },
       "imageUrl": "https://denisptra.notion.site/image/attachment%3Ac28a5645-2fad-4778-a7f6-f5ddd4fe7997%3ABeranda_(3).png?table=block&id=34f93480-d049-80d3-b5b5-d1c1947771c5&spaceId=f9ddd867-7794-4081-bc5e-9fb1766f1385&width=600",
       "link": "https://github.com/denisptra",
-      "stack": ["Express.js", "PostgreSQL", "Vite", "Tailwind CSS"]
+      "stack": [
+        "Express.js",
+        "PostgreSQL",
+        "Vite",
+        "Tailwind CSS"
+      ]
     },
     {
       "id": "fetch-api-bmkg",
@@ -82,7 +107,12 @@
       },
       "imageUrl": "https://denisptra.notion.site/image/attachment%3A7047eb93-d0a8-48e6-88e5-a5e83ba0beb8%3AScreenshot_2026-04-27_195640.png?table=block&id=34f93480-d049-80da-9c55-e4e494b8f71a&spaceId=f9ddd867-7794-4081-bc5e-9fb1766f1385&width=600",
       "link": "https://github.com/denisptra",
-      "stack": ["React.js", "REST API", "JavaScript", "CSS"]
+      "stack": [
+        "React.js",
+        "REST API",
+        "JavaScript",
+        "CSS"
+      ]
     },
     {
       "id": "community-profile",
@@ -96,7 +126,12 @@
       },
       "imageUrl": "https://denisptra.notion.site/image/attachment%3Ab72a40a1-f87d-42b3-ac93-71c9fc2537b6%3ALanding_Page_(3).png?table=block&id=34f93480-d049-8006-ad7c-d236e6a9687b&spaceId=f9ddd867-7794-4081-bc5e-9fb1766f1385&width=600",
       "link": "https://github.com/denisptra",
-      "stack": ["Laravel", "MySQL", "Tailwind CSS", "JavaScript"]
+      "stack": [
+        "Laravel",
+        "MySQL",
+        "Tailwind CSS",
+        "JavaScript"
+      ]
     },
     {
       "id": "nukang",
@@ -110,7 +145,12 @@
       },
       "imageUrl": "https://denisptra.notion.site/image/attachment%3Ac6b6e37b-d7ec-410a-a31a-8c00d782460b%3ALanding_Page_(2).png?table=block&id=34f93480-d049-806f-bea7-dc228845865a&spaceId=f9ddd867-7794-4081-bc5e-9fb1766f1385&width=600",
       "link": "https://github.com/denisptra",
-      "stack": ["Laravel", "MySQL", "Tailwind CSS", "Figma"]
+      "stack": [
+        "Laravel",
+        "MySQL",
+        "Tailwind CSS",
+        "Figma"
+      ]
     },
     {
       "id": "crane-robotic",
@@ -124,7 +164,11 @@
       },
       "imageUrl": "https://denisptra.notion.site/image/attachment%3A5c283484-78ae-45b6-bc11-59003904cac1%3AScreenshot_2026-04-27_201235.png?table=block&id=34f93480-d049-80e0-8345-ff5ce507d4c7&spaceId=f9ddd867-7794-4081-bc5e-9fb1766f1385&width=600",
       "link": "https://github.com/denisptra",
-      "stack": ["Arduino", "C++", "Electronics"]
+      "stack": [
+        "Arduino",
+        "C++",
+        "Electronics"
+      ]
     },
     {
       "id": "museum-game",
@@ -138,7 +182,11 @@
       },
       "imageUrl": "https://denisptra.notion.site/image/attachment%3Ac539809e-68b1-4411-923d-a0d4ac008765%3Aimage.png?table=block&id=34f93480-d049-8028-a9c4-c0852b639a2d&spaceId=f9ddd867-7794-4081-bc5e-9fb1766f1385&width=600",
       "link": "https://polytato.itch.io/uts-vr001-kelompok1",
-      "stack": ["Unity", "C#", "3D Modeling"]
+      "stack": [
+        "Unity",
+        "C#",
+        "3D Modeling"
+      ]
     },
     {
       "id": "kapur-game",
@@ -152,7 +200,11 @@
       },
       "imageUrl": "https://denisptra.notion.site/image/attachment%3Ae0a21f4c-12fa-43ad-b704-9509d33a48a9%3Aimage.png?table=block&id=34f93480-d049-80f9-8585-f40c7ee7fa72&spaceId=f9ddd867-7794-4081-bc5e-9fb1766f1385&width=600",
       "link": "https://polytato.itch.io/uas-vr001-kelompok1",
-      "stack": ["Unity", "C#", "Game Design"]
+      "stack": [
+        "Unity",
+        "C#",
+        "Game Design"
+      ]
     },
     {
       "id": "168-transportasi",
@@ -166,7 +218,12 @@
       },
       "imageUrl": "https://denisptra.notion.site/image/attachment%3A44c20f22-548e-4e8d-bdeb-a57b3094791c%3AOnboarding_Screen_2.png?table=block&id=34f93480-d049-801b-a1f2-f7f42398b264&spaceId=f9ddd867-7794-4081-bc5e-9fb1766f1385&width=600",
       "link": "https://www.figma.com/design/AQxlYsfnP8EXNNIyDc4QpF/168-Trans-1.0?node-id=10-13857&t=5wJHgZfJMCjCL9Pt-1",
-      "stack": ["Figma", "UI/UX Design", "Prototyping", "Mobile Design"]
+      "stack": [
+        "Figma",
+        "UI/UX Design",
+        "Prototyping",
+        "Mobile Design"
+      ]
     },
     {
       "id": "sports-apps",
@@ -180,7 +237,12 @@
       },
       "imageUrl": "https://denisptra.notion.site/image/attachment%3Accb3fcdb-4fef-4ffd-a264-8564fed54dbd%3AiPhone_14__15_Pro_Max_-_1.png?table=block&id=34f93480-d049-8050-a3b3-f1ffd2baeb89&spaceId=f9ddd867-7794-4081-bc5e-9fb1766f1385&width=600",
       "link": "https://www.figma.com/design/RdVcKKvJj2B8MAbQORcLI8/OUI---NUI?node-id=9-3&t=cBFphsA8BhUuRLIW-1",
-      "stack": ["Figma", "UI/UX Design", "Prototyping", "Mobile Design"]
+      "stack": [
+        "Figma",
+        "UI/UX Design",
+        "Prototyping",
+        "Mobile Design"
+      ]
     },
     {
       "id": "phalanxium",
@@ -194,52 +256,56 @@
       },
       "imageUrl": "https://denisptra.notion.site/image/attachment%3Ab9a2c15b-57b1-431c-ad23-b668715294fd%3AHome.png?table=block&id=34f93480-d049-8096-a345-d4d2b39d2d69&spaceId=f9ddd867-7794-4081-bc5e-9fb1766f1385&width=600",
       "link": "https://www.figma.com/design/Mu4fLOAARLhvhDx74aufSJ/Phalanxium-UI-Design-%7C-Waitlist-Web-Version?node-id=736-3739&t=nV817S25S6lWDoLx-1",
-      "stack": ["Figma", "UI/UX Design", "Web Design"]
+      "stack": [
+        "Figma",
+        "UI/UX Design",
+        "Web Design"
+      ]
     }
   ],
   "experiences": [
     {
       "id": "exp-1",
       "title": {
-        "en": "Junior Web Developer",
-        "id": "Pengembang Web Junior"
+        "en": "Part Time Graphic Design",
+        "id": "Desain Grafis Paruh Waktu"
       },
-      "company": "Freelance",
-      "location": "Jakarta Selatan, Indonesia",
-      "period": "2024 - Present",
+      "company": "PT Altindo Mitra Perkasa",
+      "location": "Bekasi, West Java",
+      "period": "Jan 2025 - Jan 2026",
       "description": {
-        "en": "Designed and built custom responsive sites and web management systems for local businesses, writing clean code and integrating REST API services.",
-        "id": "Merancang dan membangun situs responsif kustom serta sistem manajemen web untuk bisnis lokal, menulis kode bersih, dan mengintegrasikan layanan REST API."
-      },
-      "iconType": "code"
-    },
-    {
-      "id": "exp-2",
-      "title": {
-        "en": "UI/UX & Graphic Designer",
-        "id": "Desainer Grafis & UI/UX"
-      },
-      "company": "Freelance",
-      "location": "Jakarta, Indonesia",
-      "period": "2023 - Present",
-      "description": {
-        "en": "Created user flows, interface mockups, and visual publication assets including posters, banners, and logos to support branding strategies.",
-        "id": "Membuat alur pengguna, mockup antarmuka, serta aset publikasi visual termasuk poster, banner, dan logo untuk mendukung strategi identitas brand."
+        "en": "Designed visual materials for the company's digital needs and collaborated with the team to support media and branding requirements.",
+        "id": "Mendesain materi visual untuk kebutuhan digital perusahaan dan berkolaborasi dengan tim untuk mendukung kebutuhan media dan branding."
       },
       "iconType": "design"
     },
     {
+      "id": "exp-2",
+      "title": {
+        "en": "Internship in Network Infrastructure",
+        "id": "Magang Infrastruktur Jaringan"
+      },
+      "company": "Dinas Komunikasi dan Informatika",
+      "location": "Depok, Jawa Barat",
+      "period": "May 2024 - Jul 2024",
+      "description": {
+        "en": "Built a Web Community Using the Laravel Framework, helped solve network problems, and assisted in installing Access Points and LAN Cables.",
+        "id": "Membangun Komunitas Web Menggunakan Framework Laravel, membantu menyelesaikan masalah jaringan, dan membantu menginstal Access Point serta Kabel LAN."
+      },
+      "iconType": "code"
+    },
+    {
       "id": "exp-3",
       "title": {
-        "en": "Active Student Staff",
-        "id": "Staf Mahasiswa Aktif"
+        "en": "Head of Media & Information",
+        "id": "Kepala Divisi Media & Informasi"
       },
-      "company": "Campus Student Organization",
-      "location": "Jakarta, Indonesia",
-      "period": "2022 - Present",
+      "company": "Student Government Association",
+      "location": "South Jakarta",
+      "period": "Dec 2024 - Jan 2026",
       "description": {
-        "en": "Managed digital posts, created graphic illustrations for events, and updated information layouts on the official organization page.",
-        "id": "Mengelola postingan digital, membuat ilustrasi grafis untuk acara, serta memperbarui tata letak informasi pada halaman resmi organisasi."
+        "en": "Documented student activities, managed social media content, and designed visual materials such as posters and banners for organizational events.",
+        "id": "Mendokumentasikan kegiatan mahasiswa, mengelola konten media sosial, dan mendesain materi visual seperti poster dan spanduk untuk acara organisasi."
       },
       "iconType": "media"
     }
@@ -248,12 +314,12 @@
     {
       "id": "edu-1",
       "title": {
-        "en": "Computer Science (Management)",
-        "id": "Ilmu Komputer (Manajemen)"
+        "en": "Computer Science",
+        "id": "Ilmu Komputer"
       },
-      "institution": "Universitas Terbuka",
-      "location": "Jakarta, Indonesia",
-      "period": "2023 - Present",
+      "institution": "Cakrawala University",
+      "location": "Jakarta Selatan",
+      "period": "Sep 2024 - Present",
       "description": {
         "en": "Enrolled in Bachelor of Computer Science program, studying algorithms, information systems management, and project execution methodologies.",
         "id": "Menempuh pendidikan jenjang Sarjana Komputer, mempelajari algoritma pemrograman, manajemen sistem informasi, dan metodologi pelaksanaan proyek."
@@ -263,27 +329,27 @@
     {
       "id": "edu-2",
       "title": {
-        "en": "Web Programming Intensive Training",
-        "id": "Pelatihan Intensif Pemrograman Web"
+        "en": "Certificate in Junior Web Developer",
+        "id": "Sertifikat Junior Web Developer"
       },
-      "institution": "Pesantren PeTIK & SantriKoding",
-      "location": "Depok, Indonesia",
-      "period": "2023 - 2024",
+      "institution": "Pesantren Teknologi Informasi dan Komunikasi",
+      "location": "Depok, Jawa Barat",
+      "period": "Aug 2023 - Aug 2024",
       "description": {
-        "en": "Completed full stack software training on modern frameworks (React, Laravel, Node.js), database relational administration, and server deployment.",
-        "id": "Menyelesaikan pelatihan perangkat lunak full stack dengan framework modern (React, Laravel, Node.js), administrasi database relasional, dan deployment server."
+        "en": "Completed software training on modern frameworks and web development.",
+        "id": "Menyelesaikan pelatihan perangkat lunak tentang kerangka kerja modern dan pengembangan web."
       },
       "iconType": "code"
     },
     {
       "id": "edu-3",
       "title": {
-        "en": "Senior High School - Science Major",
-        "id": "SMA - Peminatan IPA"
+        "en": "High School Diploma in Natural Science",
+        "id": "Diploma SMA jurusan IPA"
       },
-      "institution": "Senior High School",
-      "location": "Lampung, Indonesia",
-      "period": "2020 - 2023",
+      "institution": "Madrasah Aliyah Al-Tsaqafah",
+      "location": "Jakarta Selatan",
+      "period": "Jul 2020 - May 2023",
       "description": {
         "en": "Graduated science major, actively leading publication clubs and designing school announcements and visual content.",
         "id": "Lulus peminatan ilmu pengetahuan alam, aktif memimpin klub media informasi, dan mendesain pengumuman grafis serta konten visual sekolah."
