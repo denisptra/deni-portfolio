@@ -1,0 +1,162 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-accent: var(--accent);
+  --color-border: var(--border);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --radius-custom: var(--radius);
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #37352f;
+  --muted: #f1f1ef;
+  --muted-foreground: #787774;
+  --primary: #1F9CF0;
+  --primary-foreground: #ffffff;
+  --accent: #1F9CF0;
+  --border: #eef0f2;
+  --card: #ffffff;
+  --card-foreground: #37352f;
+  --radius: 0.75rem;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #dfdfde;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #c1c1c0;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection color */
+::selection {
+  background-color: rgba(31, 156, 240, 0.2);
+  color: var(--foreground);
+}
+
+/* Base styles */
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Ensure no horizontal overflow */
+body {
+  overflow-x: clip;
+}
+
+/* Custom animations and background effects from reference link */
+.hero-grid-pattern {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(55, 53, 47, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(55, 53, 47, 0.03) 1px, transparent 1px);
+  mask-image: radial-gradient(circle at 50% 50%, black, transparent 90%);
+}
+
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(31, 156, 240, 0.1), transparent);
+  filter: blur(40px);
+  z-index: 1;
+  animation: float 20s infinite ease-in-out;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(-40px) translateX(20px); }
+}
+
+.notion-card {
+  border: 1px solid var(--border);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  background: var(--card);
+}
+
+.notion-card:hover {
+  background: #fcfcfc;
+  border-color: #d1d5db;
+  transform: translateY(-2px);
+}
+
+.dropdown-shadow {
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06), 0 0 0 1px rgba(0,0,0,0.02);
+}
+
+/* Infinite horizontal marquee ticker */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-content {
+  display: flex;
+  width: max-content;
+  animation: marquee 35s linear infinite;
+  gap: 1.5rem; /* Match gap-6 */
+}
+
+/* Reverse marquee for contrast motion */
+@keyframes marquee-reverse {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.marquee-content-reverse {
+  display: flex;
+  width: max-content;
+  animation: marquee-reverse 35s linear infinite;
+  gap: 1.5rem; /* Match gap-6 */
+}
+
+.marquee-container:hover .marquee-content,
+.marquee-container:hover .marquee-content-reverse {
+  animation-play-state: paused;
+}
+
+/* Gradient fade mask for marquees */
+.mask-gradient {
+  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+}
+
+

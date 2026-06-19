@@ -1,0 +1,241 @@
+{
+  "projects": [
+    {
+      "id": "oryza-lokabasa",
+      "title": {
+        "en": "Oryza Lokabasa",
+        "id": "Oryza Lokabasa"
+      },
+      "description": {
+        "en": "A digital web platform dedicated to preserving Indonesian regional languages and cultural heritage, built with Next.js, PostgreSQL, and Prisma.",
+        "id": "Platform web digital yang didedikasikan untuk melestarikan bahasa daerah dan warisan budaya Indonesia, dibangun dengan Next.js, PostgreSQL, dan Prisma."
+      },
+      "imageUrl": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=600&auto=format&fit=crop",
+      "link": "https://github.com/denisptra",
+      "stack": ["Next.js", "TypeScript", "Tailwind CSS", "PostgreSQL", "Prisma"]
+    },
+    {
+      "id": "pencak-silat-padjajaran",
+      "title": {
+        "en": "Sistem Pencak Silat Padjajaran",
+        "id": "Sistem Pencak Silat Padjajaran"
+      },
+      "description": {
+        "en": "An integrated administrative and management portal for the Pencak Silat Padjajaran organization, featuring member lists and registration tracking.",
+        "id": "Portal administrasi dan manajemen terintegrasi untuk organisasi Pencak Silat Padjajaran, menampilkan pendataan anggota dan pendaftaran kegiatan."
+      },
+      "imageUrl": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=600&auto=format&fit=crop",
+      "link": "https://github.com/denisptra",
+      "stack": ["Laravel", "MySQL", "Tailwind CSS", "JavaScript"]
+    },
+    {
+      "id": "organization-website",
+      "title": {
+        "en": "Campus Organization Profile",
+        "id": "Website Profil Organisasi"
+      },
+      "description": {
+        "en": "A modern responsive landing page for a student organization, featuring event timelines, member lists, publication gallery, and public inquiries form.",
+        "id": "Landing page responsif modern untuk organisasi mahasiswa kampus, menampilkan linimasa kegiatan, daftar anggota, galeri publikasi, dan kontak."
+      },
+      "imageUrl": "https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=600&auto=format&fit=crop",
+      "link": "https://github.com/denisptra",
+      "stack": ["React", "Vite", "Tailwind CSS", "Node.js"]
+    },
+    {
+      "id": "admin-dashboard",
+      "title": {
+        "en": "Responsive Admin Dashboard",
+        "id": "Dashboard Admin Responsif"
+      },
+      "description": {
+        "en": "A dynamic management dashboard panel with visual charts, interactive statistics, secure login system, and user profile role editing controls.",
+        "id": "Panel dashboard manajemen dinamis dengan grafik visual, statistik interaktif, sistem login aman, dan kontrol pengeditan hak akses profil."
+      },
+      "imageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600&auto=format&fit=crop",
+      "link": "https://github.com/denisptra",
+      "stack": ["React", "Next.js", "Tailwind CSS", "Recharts"]
+    },
+    {
+      "id": "uiux-portfolio",
+      "title": {
+        "en": "UI/UX Mobile App Case Study",
+        "id": "Studi Kasus UI/UX Aplikasi Mobile"
+      },
+      "description": {
+        "en": "A user-centered design project detailing the research, interface wireframes, logo design, high-fidelity mockups, and interactive prototype in Figma.",
+        "id": "Proyek desain berorientasi pengguna yang merinci riset kebutuhan, wireframe antarmuka, desain logo, mockup high-fidelity, dan prototype figma."
+      },
+      "imageUrl": "https://images.unsplash.com/photo-1561070791-26c113006238?q=80&w=600&auto=format&fit=crop",
+      "link": "https://figma.com",
+      "stack": ["Figma", "UI/UX Design", "Wireframing", "Prototyping"]
+    },
+    {
+      "id": "graphic-design-portfolio",
+      "title": {
+        "en": "Creative Graphic Design Collection",
+        "id": "Koleksi Desain Grafis Kreatif"
+      },
+      "description": {
+        "en": "A curated collection of marketing visual assets, event posters, corporate branding logos, banner designs, and social media posts.",
+        "id": "Kumpulan aset visual promosi pemasaran, poster acara, logo identitas perusahaan, desain banner, dan kiriman konten kreatif media sosial."
+      },
+      "imageUrl": "https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=600&auto=format&fit=crop",
+      "link": "https://behance.net",
+      "stack": ["Adobe Photoshop", "Adobe Illustrator", "Canva"]
+    }
+  ],
+  "experiences": [
+    {
+      "id": "exp-1",
+      "title": {
+        "en": "Junior Web Developer",
+        "id": "Junior Web Developer"
+      },
+      "company": "Freelance",
+      "location": "Jakarta Selatan, Indonesia",
+      "period": "2024 - Present",
+      "description": {
+        "en": "Designed and built custom responsive sites and web management systems for local businesses, writing clean code and integrating REST API services.",
+        "id": "Merancang dan membangun situs responsif kustom serta sistem manajemen web untuk bisnis lokal, menulis kode bersih, dan mengintegrasikan layanan REST API."
+      },
+      "iconType": "code"
+    },
+    {
+      "id": "exp-2",
+      "title": {
+        "en": "UI/UX & Graphic Designer",
+        "id": "Desainer Grafis & UI/UX"
+      },
+      "company": "Freelance",
+      "location": "Jakarta, Indonesia",
+      "period": "2023 - Present",
+      "description": {
+        "en": "Created user flows, interface mockups, and visual publication assets including posters, banners, and logos to support branding strategies.",
+        "id": "Membuat alur pengguna, mockup antarmuka, serta aset publikasi visual termasuk poster, banner, dan logo untuk mendukung strategi identitas brand."
+      },
+      "iconType": "design"
+    },
+    {
+      "id": "exp-3",
+      "title": {
+        "en": "Active Student Staff",
+        "id": "Anggota Staf Aktif"
+      },
+      "company": "Campus Student Organization",
+      "location": "Jakarta, Indonesia",
+      "period": "2022 - Present",
+      "description": {
+        "en": "Managed digital posts, created graphic illustrations for events, and updated information layouts on the official organization page.",
+        "id": "Mengelola postingan digital, membuat ilustrasi grafis untuk acara, serta memperbarui tata letak informasi pada halaman resmi organisasi."
+      },
+      "iconType": "media"
+    }
+  ],
+  "education": [
+    {
+      "id": "edu-1",
+      "title": {
+        "en": "Computer Science (Management)",
+        "id": "Ilmu Komputer (Manajemen)"
+      },
+      "institution": "Universitas Terbuka",
+      "location": "Jakarta, Indonesia",
+      "period": "2023 - Present",
+      "description": {
+        "en": "Enrolled in Bachelor of Computer Science program, studying algorithms, information systems management, and project execution methodologies.",
+        "id": "Menempuh pendidikan jenjang Sarjana Komputer, mempelajari algoritma pemrograman, manajemen sistem informasi, dan metodologi proyek."
+      },
+      "iconType": "university"
+    },
+    {
+      "id": "edu-2",
+      "title": {
+        "en": "Web Programming Intensive Training",
+        "id": "Pelatihan Intensif Pemrograman Web"
+      },
+      "institution": "Pesantren PeTIK & SantriKoding",
+      "location": "Depok, Indonesia",
+      "period": "2023 - 2024",
+      "description": {
+        "en": "Completed full stack software training on modern frameworks (React, Laravel, Node.js), database relational administration, and server deployment.",
+        "id": "Menyelesaikan pelatihan perangkat lunak full stack dengan framework modern (React, Laravel, Node.js), administrasi database relasional, dan server."
+      },
+      "iconType": "code"
+    },
+    {
+      "id": "edu-3",
+      "title": {
+        "en": "Senior High School Science Student",
+        "id": "Siswa SMA Peminatan IPA"
+      },
+      "institution": "Senior High School",
+      "location": "Lampung, Indonesia",
+      "period": "2020 - 2023",
+      "description": {
+        "en": "Graduated science major, actively leading publication clubs and designing school announcements and visual content.",
+        "id": "Lulus peminatan ilmu pengetahuan alam, aktif memimpin klub media informasi, dan mendesain pengumuman grafis serta konten visual sekolah."
+      },
+      "iconType": "school"
+    }
+  ],
+  "feedbacks": [],
+  "achievements": [
+    {
+      "id": "ach-1",
+      "title": {
+        "en": "Web Development Fundamentals",
+        "id": "Dasar Pemrograman Web"
+      },
+      "date": "2024",
+      "issuer": "Dicoding Indonesia",
+      "description": {
+        "en": "Acquired formal validation of core markup language (HTML), styling layouts (CSS), logic (JavaScript), and responsive screen optimizations.",
+        "id": "Memperoleh validasi formal bahasa markup (HTML), tata letak gaya (CSS), logika interaktif (JavaScript), serta optimasi layar responsif."
+      },
+      "icon": "zap"
+    },
+    {
+      "id": "ach-2",
+      "title": {
+        "en": "React & Next.js Professional",
+        "id": "Pengembangan React & Next.js"
+      },
+      "date": "2024",
+      "issuer": "Udemy & SantriKoding",
+      "description": {
+        "en": "Advanced training in React hook flows, state handlers, Next.js routing structures, component design, and server optimization.",
+        "id": "Pelatihan tingkat lanjut alur hook React, penangan status, struktur router Next.js, desain komponen, dan optimasi server."
+      },
+      "icon": "award"
+    },
+    {
+      "id": "ach-3",
+      "title": {
+        "en": "UI/UX Design Certification",
+        "id": "Sertifikasi Desain UI/UX"
+      },
+      "date": "2023",
+      "issuer": "Coursera",
+      "description": {
+        "en": "Valid validation in creating wireframes, defining user flows, conducting UX evaluations, interface mapping, and high-fidelity layouts.",
+        "id": "Sertifikasi kompetensi pembuatan wireframe, penentuan alur pengguna, pelaksanaan evaluasi UX, pemetaan antarmuka, dan tata letak."
+      },
+      "icon": "star"
+    },
+    {
+      "id": "ach-4",
+      "title": {
+        "en": "Creative Graphic Design Certificate",
+        "id": "Sertifikat Desain Grafis Kreatif"
+      },
+      "date": "2023",
+      "issuer": "Canva Design Academy",
+      "description": {
+        "en": "Practical training validating corporate branding typography, visual hierarchy balance, layout composition, and content export formats.",
+        "id": "Pelatihan praktis memvalidasi tipografi identitas brand, keseimbangan tata letak visual, komposisi warna, dan format ekspor konten."
+      },
+      "icon": "trophy"
+    }
+  ]
+}
