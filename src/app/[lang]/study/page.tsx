@@ -56,8 +56,8 @@ export default function StudyPage() {
             title={t.experience.ctaTitle}
             subtitle={t.cta.subtitle}
             buttonText={t.experience.ctaBtn}
-            href="/CV.pdf"
-            download="Deni_Trio_Saputra_CV.pdf"
+            href="/Deni%20Trio%20Saputra%20-%20UI%20UX.pdf"
+            download="Deni Trio Saputra - UI UX.pdf"
           />
         </div>
         <Footer />
