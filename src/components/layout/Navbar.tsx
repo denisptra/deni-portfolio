@@ -160,7 +160,7 @@ export default function Navbar() {
 
           {/* Download CV button */}
           <a
-            href="/Deni%20Trio%20Saputra%20-%20UI%20UX.pdf"
+            href="/Deni-Trio-Saputra-UI-UX.pdf"
             download="Deni Trio Saputra - UI UX.pdf"
             className="hidden md:block bg-[#1F9CF0] text-white px-5 py-2 rounded-xl text-[12px] font-bold hover:bg-[#1581cc] transition-all shadow-sm"
           >
@@ -246,7 +246,7 @@ export default function Navbar() {
 
           <div className="pt-4 pb-2">
             <a
-              href="/Deni%20Trio%20Saputra%20-%20UI%20UX.pdf"
+              href="/Deni-Trio-Saputra-UI-UX.pdf"
               download="Deni Trio Saputra - UI UX.pdf"
               className="flex items-center justify-center w-full bg-[#1F9CF0] text-white py-3.5 rounded-2xl font-bold text-sm shadow-lg shadow-blue-50"
             >

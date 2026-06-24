@@ -54,7 +54,7 @@ export default function CtaBanner({
           {/* Button Link */}
           {download ? (
             <a
-              href={href || "/Deni%20Trio%20Saputra%20-%20UI%20UX.pdf"}
+              href={href || "/Deni-Trio-Saputra-UI-UX.pdf"}
               download={download === true ? "" : download}
               className="bg-white hover:bg-gray-100 text-black px-10 md:px-12 py-4 md:py-5 rounded-2xl font-bold transition-all shadow-xl hover:scale-105 active:scale-95 text-lg text-center"
             >

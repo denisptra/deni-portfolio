@@ -55,7 +55,7 @@ export default function ExperiencePage() {
             title={t.experience.ctaTitle}
             subtitle={t.cta.subtitle}
             buttonText={t.experience.ctaBtn}
-            href="/Deni%20Trio%20Saputra%20-%20UI%20UX.pdf"
+            href="/Deni-Trio-Saputra-UI-UX.pdf"
             download="Deni Trio Saputra - UI UX.pdf"
           />
         </div>
