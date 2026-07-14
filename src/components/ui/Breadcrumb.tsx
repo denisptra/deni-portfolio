@@ -1,42 +1,39 @@
 "use client";
 
+import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Home, ChevronRight } from "lucide-react";
+import { useApp } from "@/context/AppContext";
 
 export default function Breadcrumb() {
   const pathname = usePathname();
-  const segments = pathname.split("/").filter(Boolean);
+  const { lang } = useApp();
 
-  if (segments.length <= 1) return null; // Jika hanya "/" atau "/[lang]", sembunyikan breadcrumbs
+  const getDocumentNo = (path: string) => {
+    if (path.includes("/about")) return "LAMPIRAN_01 // BIODATA";
+    if (path.includes("/experience")) return "LAMPIRAN_02 // RIWAYAT WORK";
+    if (path.includes("/projects")) return "LAMPIRAN_04 // BERKAS PROYEK";
+    if (path.includes("/achievements")) return "LAMPIRAN_05 // SERTIFIKAT";
+    if (path.includes("/contact")) return "LAMPIRAN_06 // FORMULIR KONTAK";
+    return "ARSIP_UTAMA";
+  };
 
-  const lang = segments[0];
-  const pageSegments = segments.slice(1);
+  const docNo = getDocumentNo(pathname);
 
   return (
-    <nav className="flex items-center space-x-2 text-xs font-semibold text-gray-400 mb-8 uppercase tracking-widest animate-in fade-in slide-in-from-left-2 duration-300">
-      <Link href={`/${lang}`} className="flex items-center hover:text-black transition-colors">
-        <Home size={14} className="mr-1.5" />
-        Home
-      </Link>
-      {pageSegments.map((segment, index) => {
-        const isLast = index === pageSegments.length - 1;
-        const href = `/${lang}/${pageSegments.slice(0, index + 1).join("/")}`;
-        const label = segment.replace(/-/g, " ");
-
-        return (
-          <div key={href} className="flex items-center space-x-2">
-            <ChevronRight size={14} className="text-gray-300" />
-            {isLast ? (
-              <span className="text-black font-bold">{label}</span>
-            ) : (
-              <Link href={href} className="hover:text-black transition-colors">
-                {label}
-              </Link>
-            )}
-          </div>
-        );
-      })}
-    </nav>
+    <div className="w-full mb-8 border-b-2 border-dashed border-ink pb-4">
+      <div className="flex flex-wrap items-center justify-between gap-4">
+        <Link
+          href={`/${lang}`}
+          className="inline-flex items-center gap-2 px-3 py-1.5 bg-archive-yellow border-2 border-ink text-ink text-label-mono font-bold uppercase brutal-shadow-sm hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-none transition-all focus:outline-none focus:ring-2 focus:ring-ink"
+        >
+          <span className="material-symbols-outlined text-[14px]">home</span>
+          Beranda
+        </Link>
+        <span className="text-data-technical text-on-surface-variant font-bold tracking-wider">
+          {docNo}
+        </span>
+      </div>
+    </div>
   );
 }

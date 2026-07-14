@@ -1,260 +1,108 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useApp } from "@/context/AppContext";
-import { ChevronDown, Globe, Menu, X, BookOpen, Award, FolderHeart } from "lucide-react";
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
   const { lang, setLang, t } = useApp();
   const pathname = usePathname();
-  const [exploreOpen, setExploreOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [mobileExploreOpen, setMobileExploreOpen] = useState(false);
 
-  const isActive = (path: string) => pathname === path;
+  const navItems = [
+    { name: t.nav.about || "Profil", path: `/${lang}/about` },
+    { name: "Keahlian", path: `/${lang}#keahlian` },
+    { name: t.nav.experience || "Riwayat", path: `/${lang}/experience` },
+    { name: t.nav.portfolio || "Proyek", path: `/${lang}/projects` },
+    { name: t.nav.achievements || "Sertifikat", path: `/${lang}/achievements` },
+    { name: t.nav.contact || "Kontak", path: `/${lang}/contact` },
+  ];
+
+  const isActive = (path: string) => {
+    if (path.includes("#")) return false;
+    return pathname === path;
+  };
 
   return (
-    <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-[#eef0f2]">
-      <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        {/* Logo / Brand Name */}
-        <Link href={`/${lang}`} className="flex items-center group">
-          <div className="w-8 h-8 flex items-center justify-center group-hover:rotate-45 transition-transform duration-500">
-            <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M16 4V8M16 24V28M24.4853 7.51472L21.6569 10.3431M10.3431 21.6569L7.51472 24.4853M28 16H24M8 16H4M24.4853 24.4853L21.6569 21.6569M10.3431 10.3431L7.51472 7.51472"
-                stroke="currentColor"
-                className="text-black"
-                strokeWidth="3"
-                strokeLinecap="round"
-              />
-            </svg>
-          </div>
-          <span className="ml-2.5 font-bold tracking-tight text-[#37352f] text-sm hidden sm:inline">
-            Deni Trio Saputra
-          </span>
-        </Link>
-
-        {/* Desktop Links */}
-        <div className="hidden md:flex items-center space-x-8 text-[13px] font-medium text-[#7a7872]">
+    <header className="bg-paper border-b-thick border-ink brutal-shadow sticky top-0 z-50 h-[70px] md:h-[70px]">
+      <div className="flex flex-col md:flex-row justify-between items-stretch w-full px-margin-mobile md:px-margin-desktop max-w-full mx-auto h-full">
+        {/* Brand + mobile controls */}
+        <div className="flex justify-between items-center py-4 md:py-0 md:self-center">
           <Link
-            href={`/${lang}/about`}
-            className={`hover:text-black transition-colors ${
-              isActive(`/${lang}/about`) ? "text-black font-bold" : ""
-            }`}
+            href={`/${lang}`}
+            className="font-display text-2xl font-bold uppercase tracking-tight text-ink hover:text-archive-orange transition-colors"
           >
-            {t.nav.about}
+            ARSIP<span className="text-stempel-red">.</span>DIGITAL
           </Link>
-          <Link
-            href={`/${lang}/experience`}
-            className={`hover:text-black transition-colors ${
-              isActive(`/${lang}/experience`) ? "text-black font-bold" : ""
-            }`}
-          >
-            {t.nav.experience}
-          </Link>
-
-          {/* Explore Dropdown */}
-          <div
-            className="relative"
-            onMouseEnter={() => setExploreOpen(true)}
-            onMouseLeave={() => setExploreOpen(false)}
-          >
+          <div className="flex items-center gap-3 md:hidden">
             <button
-              className={`flex items-center hover:text-black transition-colors py-2 ${
-                isActive(`/${lang}/study`) || isActive(`/${lang}/projects`) || isActive(`/${lang}/achievements`)
-                  ? "text-black font-bold"
-                  : ""
-              }`}
+              onClick={() => setLang(lang === "en" ? "id" : "en")}
+              className="px-3 py-1.5 border-2 border-ink bg-surface text-ink text-label-mono font-bold"
+              aria-label="Switch language"
             >
-              {t.nav.explore}
-              <ChevronDown
-                className={`ml-1 w-3 h-3 transition-transform duration-300 ${
-                  exploreOpen ? "rotate-180" : ""
-                }`}
-              />
+              {lang.toUpperCase()}
             </button>
-
-            {/* Dropdown Menu */}
-            <div
-              className={`absolute top-full left-1/2 -translate-x-1/2 pt-2 w-72 transform transition-all duration-200 origin-top ${
-                exploreOpen ? "opacity-100 scale-100" : "opacity-0 scale-95 pointer-events-none"
-              }`}
+            <button
+              className="p-2 border-2 border-ink bg-surface text-ink"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
             >
-              <div className="bg-white border border-[#eef0f2] rounded-2xl shadow-xl shadow-black/5 p-2">
-                <Link
-                  href={`/${lang}/study`}
-                  className="flex items-start space-x-4 p-3 hover:bg-blue-50 rounded-xl group transition-colors"
-                >
-                  <div className="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center text-blue-600 transition-colors group-hover:bg-blue-600 group-hover:text-white">
-                    <BookOpen size={18} />
-                  </div>
-                  <div>
-                    <div className="text-[#37352f] font-bold text-[13px]">
-                      {t.nav.education}
-                    </div>
-                    <div className="text-[11px] text-[#9a9892] mt-0.5 font-normal leading-tight">
-                      {t.nav.eduSub}
-                    </div>
-                  </div>
-                </Link>
-
-                <Link
-                  href={`/${lang}/projects`}
-                  className="flex items-start space-x-4 p-3 hover:bg-amber-50 rounded-xl group transition-colors"
-                >
-                  <div className="w-10 h-10 rounded-lg bg-amber-100 flex items-center justify-center text-amber-600 transition-colors group-hover:bg-amber-600 group-hover:text-white">
-                    <FolderHeart size={18} />
-                  </div>
-                  <div>
-                    <div className="text-[#37352f] font-bold text-[13px]">
-                      {t.nav.portfolio}
-                    </div>
-                    <div className="text-[11px] text-[#9a9892] mt-0.5 font-normal leading-tight">
-                      {t.nav.portSub}
-                    </div>
-                  </div>
-                </Link>
-
-                <Link
-                  href={`/${lang}/achievements`}
-                  className="flex items-start space-x-4 p-3 hover:bg-emerald-50 rounded-xl group transition-colors"
-                >
-                  <div className="w-10 h-10 rounded-lg bg-emerald-100 flex items-center justify-center text-emerald-600 transition-colors group-hover:bg-emerald-600 group-hover:text-white">
-                    <Award size={18} />
-                  </div>
-                  <div>
-                    <div className="text-[#37352f] font-bold text-[13px]">
-                      {t.nav.achievements}
-                    </div>
-                    <div className="text-[11px] text-[#9a9892] mt-0.5 font-normal leading-tight">
-                      {t.nav.achSub}
-                    </div>
-                  </div>
-                </Link>
-              </div>
-            </div>
+              {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+            </button>
           </div>
-
-          <Link
-            href={`/${lang}/contact`}
-            className={`hover:text-black transition-colors ${
-              isActive(`/${lang}/contact`) ? "text-black font-bold" : ""
-            }`}
-          >
-            {t.nav.contact}
-          </Link>
         </div>
 
-        {/* Right Buttons: Lang + CV + Mobile Menu Toggle */}
-        <div className="flex items-center space-x-3">
-          {/* Lang Toggle */}
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex items-center gap-1 self-stretch" aria-label="Main navigation">
+          {navItems.map((item, idx) => (
+            <Link
+              key={idx}
+              href={item.path}
+              className={`flex items-center px-4 text-label-mono font-bold uppercase tracking-wider transition-colors border-b-thick ${
+                isActive(item.path)
+                  ? "text-ink border-stempel-red bg-surface-container-low"
+                  : "text-on-surface-variant border-transparent hover:text-ink hover:border-outline hover:bg-surface-container-low"
+              }`}
+            >
+              {item.name}
+            </Link>
+          ))}
+        </nav>
+
+        {/* Right section */}
+        <div className="hidden md:flex items-center gap-4 py-4 md:py-0">
           <button
             onClick={() => setLang(lang === "en" ? "id" : "en")}
-            className="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-[#f1f1ef] text-[#37352f] hover:bg-[#e1e1df] transition-colors text-[11px] font-bold"
+            className="px-3 py-1.5 border-2 border-ink bg-surface text-ink text-label-mono font-bold hover:bg-archive-yellow transition-colors"
+            aria-label="Switch language"
           >
-            <Globe size={13} />
-            <span>{lang.toUpperCase()}</span>
+            {lang.toUpperCase()}
           </button>
-
-          {/* Download CV button */}
-          <a
-            href="/Deni-Trio-Saputra-UI-UX.pdf"
-            download="Deni Trio Saputra - UI UX.pdf"
-            className="hidden md:block bg-[#1F9CF0] text-white px-5 py-2 rounded-xl text-[12px] font-bold hover:bg-[#1581cc] transition-all shadow-sm"
-          >
-            {t.nav.downloadCv}
-          </a>
-
-          {/* Mobile menu button */}
-          <button
-            className="md:hidden p-2 text-[#37352f] hover:bg-[#f1f1ef] rounded-xl transition-colors"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          >
-            {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
-          </button>
+          <div className="hidden lg:block text-data-technical text-ink border-2 border-ink px-3 py-1 bg-surface brutal-shadow-sm">
+            No: 001/DTS/VII/2026
+          </div>
         </div>
       </div>
 
-      {/* Mobile Drawer */}
+      {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-white border-t border-[#eef0f2] py-4 px-6 animate-in slide-in-from-top duration-300">
-          <Link
-            href={`/${lang}/about`}
-            className="block py-3 font-bold text-[#37352f] border-b border-[#f9f9f8]"
-            onClick={() => setMobileMenuOpen(false)}
-          >
-            {t.nav.about}
-          </Link>
-          <Link
-            href={`/${lang}/experience`}
-            className="block py-3 font-bold text-[#37352f] border-b border-[#f9f9f8]"
-            onClick={() => setMobileMenuOpen(false)}
-          >
-            {t.nav.experience}
-          </Link>
-
-          {/* Explore sub-menu inside Mobile Drawer */}
-          <div className="border-b border-[#f9f9f8]">
-            <button
-              onClick={() => setMobileExploreOpen(!mobileExploreOpen)}
-              className="flex items-center justify-between w-full py-3 font-bold text-[#37352f]"
+        <div className="md:hidden bg-paper border-t-2 border-ink px-margin-mobile pb-4 flex flex-col gap-2">
+          {navItems.map((item, idx) => (
+            <Link
+              key={idx}
+              href={item.path}
+              onClick={() => setMobileMenuOpen(false)}
+              className={`p-3 border-2 border-ink text-label-mono font-bold uppercase ${
+                isActive(item.path) ? "bg-archive-yellow text-ink" : "bg-surface text-on-surface-variant hover:bg-surface-variant"
+              }`}
             >
-              <span>{t.nav.explore}</span>
-              <ChevronDown
-                className={`w-4 h-4 transition-transform duration-300 ${
-                  mobileExploreOpen ? "rotate-180" : ""
-                }`}
-              />
-            </button>
-
-            {mobileExploreOpen && (
-              <div className="grid grid-cols-1 gap-1 pb-3 px-4">
-                <Link
-                  href={`/${lang}/study`}
-                  className="block py-2 text-[#7a7872] font-semibold text-sm"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {t.nav.education}
-                </Link>
-                <Link
-                  href={`/${lang}/projects`}
-                  className="block py-2 text-[#7a7872] font-semibold text-sm"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {t.nav.portfolio}
-                </Link>
-                <Link
-                  href={`/${lang}/achievements`}
-                  className="block py-2 text-[#7a7872] font-semibold text-sm"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {t.nav.achievements}
-                </Link>
-              </div>
-            )}
-          </div>
-
-          <Link
-            href={`/${lang}/contact`}
-            className="block py-3 font-bold text-[#37352f]"
-            onClick={() => setMobileMenuOpen(false)}
-          >
-            {t.nav.contact}
-          </Link>
-
-          <div className="pt-4 pb-2">
-            <a
-              href="/Deni-Trio-Saputra-UI-UX.pdf"
-              download="Deni Trio Saputra - UI UX.pdf"
-              className="flex items-center justify-center w-full bg-[#1F9CF0] text-white py-3.5 rounded-2xl font-bold text-sm shadow-lg shadow-blue-50"
-            >
-              {t.nav.downloadCv}
-            </a>
-          </div>
+              {item.name}
+            </Link>
+          ))}
         </div>
       )}
-    </nav>
+    </header>
   );
 }

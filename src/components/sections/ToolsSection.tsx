@@ -1,74 +1,56 @@
 "use client";
 
-import { useApp } from "@/context/AppContext";
-import { frameworks, tools } from "@/data/portfolio";
+import React from "react";
 
 export default function ToolsSection() {
-  const { t } = useApp();
-
-  // Duplicate items to ensure smooth infinite loop
-  const frameworksList = [...frameworks, ...frameworks, ...frameworks];
-  const toolsList = [...tools, ...tools, ...tools];
+  const skillCategories = [
+    {
+      title: "FRONTEND",
+      skills: ["React JS / Next JS", "Vite", "Flutter / Dart", "UI/UX Design"],
+    },
+    {
+      title: "BACKEND & DATA",
+      skills: ["Laravel", "Express JS", "PostgreSQL / MySQL", "API & Integrasi"],
+    },
+    {
+      title: "LAINNYA",
+      skills: ["Unity (Game Dev)", "Arduino / Robotics", "Desain Grafis"],
+    },
+    {
+      title: "SOFT SKILL",
+      skills: ["Problem Solving", "Analytical Thinking", "Team Collaboration", "Communication", "Adaptability"],
+    },
+  ];
 
   return (
-    <section className="py-20 bg-white border-b border-[#eef0f2]">
-      <div className="max-w-7xl mx-auto text-center space-y-16 overflow-hidden">
-        {/* 1. Frameworks Section */}
-        <div className="space-y-6">
-          <p className="text-[#37352f]/40 font-bold uppercase tracking-[0.2em] text-[11px] px-6">
-            {t.tools.frameworksTitle}
-          </p>
-          
-          {/* Marquee Wrapper */}
-          <div className="marquee-container w-full overflow-hidden relative py-4 mask-gradient">
-            <div className="marquee-content gap-6 flex">
-              {frameworksList.map((fw, idx) => (
-                <div
-                  key={`${fw.name}-${idx}`}
-                  className="flex flex-col items-center justify-center w-24 h-24 sm:w-28 sm:h-28 flex-shrink-0 group cursor-pointer transition-all hover:-translate-y-1 hover:border-[#1F9CF0] hover:shadow-lg hover:shadow-blue-50 border border-[#eef0f2] bg-white rounded-2xl p-4"
-                  title={fw.name}
-                >
-                  <div className="w-full h-full flex items-center justify-center filter grayscale group-hover:grayscale-0 transition-all duration-500 opacity-60 group-hover:opacity-100">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={fw.icon}
-                      alt={fw.name}
-                      className="w-full h-full object-contain"
-                    />
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
+    <section className="relative w-full max-w-container-max mx-auto" id="keahlian">
+      <div className="inline-block bg-archive-yellow border-t-thick border-x-thick border-ink px-4 py-2 text-label-mono font-bold uppercase relative z-10 -mb-[3px]">
+        MATRIKS KEAHLIAN
+      </div>
 
-        {/* 2. Tools Section */}
-        <div className="space-y-6">
-          <p className="text-[#37352f]/40 font-bold uppercase tracking-[0.2em] text-[11px] px-6">
-            {t.tools.toolsTitle}
-          </p>
+      <div className="border-thick border-ink bg-paper p-6 md:p-8 brutal-shadow relative">
+        <h2 className="text-headline-section text-ink mb-8 uppercase border-b-2 border-dashed border-ink pb-4">
+          Keahlian Teknis &amp; Soft Skill
+        </h2>
 
-          {/* Marquee Wrapper (Reverse Scroll) */}
-          <div className="marquee-container w-full overflow-hidden relative py-4 mask-gradient">
-            <div className="marquee-content-reverse gap-6 flex">
-              {toolsList.map((tool, idx) => (
-                <div
-                  key={`${tool.name}-${idx}`}
-                  className="flex flex-col items-center justify-center w-24 h-24 sm:w-28 sm:h-28 flex-shrink-0 group cursor-pointer transition-all hover:-translate-y-1 hover:border-[#1F9CF0] hover:shadow-lg hover:shadow-blue-50 border border-[#eef0f2] bg-white rounded-2xl p-4"
-                  title={tool.name}
-                >
-                  <div className="w-full h-full flex items-center justify-center filter grayscale group-hover:grayscale-0 transition-all duration-500 opacity-60 group-hover:opacity-100">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={tool.icon}
-                      alt={tool.name}
-                      className="w-full h-full object-contain"
-                    />
-                  </div>
-                </div>
-              ))}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {skillCategories.map((cat, idx) => (
+            <div key={idx} className="border-2 border-ink bg-surface brutal-shadow-sm flex flex-col h-full">
+              <div className="bg-archive-yellow border-b-2 border-ink p-3 text-label-mono font-bold uppercase flex justify-between items-center">
+                <span>{cat.title}</span>
+                <span className="text-stempel-red font-bold">[x]</span>
+              </div>
+              <div className="p-4 flex-1">
+                <ul className="text-data-technical space-y-3">
+                  {cat.skills.map((skill, sIdx) => (
+                    <li key={sIdx} className="flex items-center gap-2 before:content-['>'] before:text-stempel-red before:font-bold">
+                      {skill}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

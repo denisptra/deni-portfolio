@@ -1,16 +1,23 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
+const ibmPlexSans = IBM_Plex_Sans({
   subsets: ["latin"],
-  variable: "--font-inter",
+  weight: ["400", "600", "700"],
+  variable: "--font-ibm-plex-sans",
+});
+
+const ibmPlexMono = IBM_Plex_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-ibm-plex-mono",
 });
 
 export const metadata: Metadata = {
-  title: "Deni Trio Saputra | Portfolio",
+  title: "ARSIP DIGITAL | Deni Trio Saputra",
   description:
-    "Portfolio Deni Trio Saputra, Junior Web Developer, UI/UX Designer, and Graphic Designer. Building modern websites, admin dashboards, and digital designs.",
+    "Arsip Digital Portfolio — Deni Trio Saputra. Web & Mobile Developer, UI/UX Designer. Berkas resmi keahlian, proyek, dan pengalaman profesional.",
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
@@ -18,10 +25,11 @@ export const metadata: Metadata = {
   },
   keywords: [
     "Deni Trio Saputra",
+    "Arsip Digital",
     "Portfolio",
     "Web Developer",
     "UI/UX Designer",
-    "Graphic Designer",
+    "Mobile Developer",
     "Next.js",
     "React",
     "Frontend Developer",
@@ -29,18 +37,18 @@ export const metadata: Metadata = {
   authors: [{ name: "Deni Trio Saputra" }],
   creator: "Deni Trio Saputra",
   openGraph: {
-    title: "Deni Trio Saputra | Portfolio",
+    title: "ARSIP DIGITAL | Deni Trio Saputra",
     description:
-      "Portfolio Deni Trio Saputra, Junior Web Developer, UI/UX Designer, and Graphic Designer.",
+      "Arsip Digital Portfolio — Deni Trio Saputra. Web & Mobile Developer, UI/UX Designer.",
     type: "website",
     locale: "id_ID",
-    siteName: "Deni Trio Saputra Portfolio",
+    siteName: "Arsip Digital — DTS Portfolio",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Deni Trio Saputra | Portfolio",
+    title: "ARSIP DIGITAL | Deni Trio Saputra",
     description:
-      "Portfolio Deni Trio Saputra, Junior Web Developer, UI/UX Designer, and Graphic Designer.",
+      "Arsip Digital Portfolio — Deni Trio Saputra. Web & Mobile Developer, UI/UX Designer.",
   },
   robots: {
     index: true,
@@ -54,8 +62,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="light">
-      <body className={`${inter.variable} font-sans antialiased`}>
+    <html lang="en">
+      <head>
+        {/* Space Mono loaded via link since next/font/google doesn't support it */}
+        <link
+          href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap"
+          rel="stylesheet"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=block"
+          rel="stylesheet"
+        />
+      </head>
+      <body className={`${ibmPlexSans.variable} ${ibmPlexMono.variable} antialiased`}>
         {children}
       </body>
     </html>

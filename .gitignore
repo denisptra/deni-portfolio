@@ -36,6 +36,24 @@ yarn-error.log*
 # vercel
 .vercel
 
+# unused folders
+/archive_brutalism/
+/contact_certs_arsip_digital_updated/
+/home_arsip_digital_updated/
+/projects_arsip_digital_updated/
+/skills_experience_arsip_digital_updated/
+/Downloads/
+
+# unused files
+/Deni Trio Saputra-Resume.pdf
+
+# unused components
+/src/components/ui/Badge.tsx
+/src/components/ui/Button.tsx
+/src/components/ui/Card.tsx
+/src/components/ui/Container.tsx
+/src/components/ui/SectionHeading.tsx
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

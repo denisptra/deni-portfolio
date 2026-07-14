@@ -2,85 +2,91 @@
 
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import PerforationStrip from "@/components/layout/PerforationStrip";
 import Breadcrumb from "@/components/ui/Breadcrumb";
+import CertCard from "@/components/ui/CertCard";
+import AnimatedSection from "@/components/ui/AnimatedSection";
+import CardStack from "@/components/ui/CardStack";
 import { useApp } from "@/context/AppContext";
-import { Zap, Award, Star, Trophy, HelpCircle } from "lucide-react";
 
 export default function AchievementsPage() {
   const { data, t, isLoading, lang } = useApp();
 
-  const getIcon = (iconName: string) => {
-    const size = 14;
-    switch (iconName) {
-      case "zap":
-        return <Zap size={size} className="text-amber-500" />;
-      case "award":
-        return <Award size={size} className="text-blue-500" />;
-      case "star":
-        return <Star size={size} className="text-emerald-500" />;
-      case "trophy":
-        return <Trophy size={size} className="text-purple-500" />;
-      default:
-        return <HelpCircle size={size} className="text-gray-500" />;
-    }
+  // Mapping categorizations for badges
+  const getCategoryName = (id: string) => {
+    if (id === "ach-1") return "BOOTCAMP";
+    if (id === "ach-2") return "KURSUS";
+    if (id === "ach-3") return "SERTIFIKASI";
+    if (id === "ach-4") return "SERTIFIKASI";
+    if (id === "ach-5") return "PENGHARGAAN";
+    if (id === "ach-6") return "PRESTASI";
+    if (id === "ach-7") return "KURSUS";
+    if (id === "ach-8") return "PRESTASI";
+    return "SERTIFIKAT";
+  };
+
+  const getIconName = (id: string) => {
+    if (id === "ach-1" || id === "ach-5") return "award";
+    if (id === "ach-2" || id === "ach-7") return "zap";
+    if (id === "ach-3" || id === "ach-6") return "star";
+    if (id === "ach-4" || id === "ach-8") return "trophy";
+    return "star";
   };
 
   return (
     <>
       <Navbar />
-      <main className="bg-white min-h-screen flex flex-col justify-between">
-        <div className="py-12 animate-in fade-in duration-700 flex-grow bg-white">
-          {/* Header Section */}
-          <div className="max-w-4xl mx-auto px-6 mb-16">
-            <Breadcrumb />
-            <h1 className="text-3xl font-black text-[#37352f] mb-4 tracking-tight leading-none">
-              {t.achievements.title}
-            </h1>
-            <p className="text-[13px] text-[#37352f]/50 leading-relaxed font-medium max-w-lg">
-              {t.achievements.subtitle}
-            </p>
-          </div>
+      <PerforationStrip />
 
-          {/* Certificates List Section */}
-          <div className="max-w-4xl mx-auto px-6 space-y-4 mb-24">
+      <main className="md:pl-perforation-width px-margin-mobile md:px-margin-desktop py-12 max-w-container-max mx-auto">
+        <div className="w-full flex flex-col gap-8 items-center">
+
+          <Breadcrumb />
+
+          {/* SECTION: SERTIFIKAT */}
+          <AnimatedSection className="w-full relative text-center">
+            {/* Section Header */}
+            <div className="flex items-end gap-4 mb-12 border-b-thick border-ink pb-4 justify-center">
+              <div className="bg-archive-orange text-ink px-4 py-2 text-label-mono border-thick border-ink brutal-shadow-sm uppercase font-bold flex items-center gap-2">
+                <span className="material-symbols-outlined">folder</span>
+                Lampiran_05
+              </div>
+              <h1 className="text-headline-section text-ink uppercase m-0 leading-none">
+                Sertifikat &amp; Prestasi
+              </h1>
+            </div>
+
+            {/* Certifications Grid */}
             {isLoading ? (
-              <div className="space-y-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {[1, 2, 3].map((c) => (
-                  <div key={c} className="h-32 bg-gray-50 rounded-2xl animate-pulse" />
+                  <div key={c} className="h-64 bg-surface-container border-2 border-ink animate-pulse" />
                 ))}
               </div>
             ) : (
-              data.achievements.map((c) => (
-                <div
-                  key={c.id}
-                  className="bg-white border border-[#eef0f2] p-6 rounded-2xl hover:bg-[#fcfcfc] transition-all flex items-start space-x-6 group"
-                >
-                  <div className="w-10 h-10 rounded-xl bg-[#f1f1ef] flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
-                    {getIcon(c.icon)}
-                  </div>
-                  <div className="flex-grow">
-                    <div className="flex flex-col md:flex-row md:items-center justify-between gap-1 mb-1.5">
-                      <h3 className="text-[15px] font-bold text-[#37352f] tracking-tight">
-                        {c.title[lang] || c.title["en"]}
-                      </h3>
-                      <span className="text-[10px] font-black text-[#37352f]/20 uppercase tracking-[0.2em]">
-                        {c.date}
-                      </span>
-                    </div>
-                    <p className="text-[#1F9CF0] font-bold text-[11px] mb-2 uppercase tracking-wide">
-                      {c.issuer}
-                    </p>
-                    <p className="text-[#37352f]/50 leading-relaxed text-[13px]">
-                      {c.description[lang] || c.description["en"]}
-                    </p>
-                  </div>
-                </div>
-              ))
+              <CardStack
+                className="w-full"
+                items={data.achievements.map((c) => ({
+                  id: c.id,
+                  content: (
+                    <CertCard
+                      category={getCategoryName(c.id)}
+                      title={c.title[lang] || c.title["en"]}
+                      description={c.description[lang] || c.description["en"]}
+                      issuer={c.issuer}
+                      date={c.date}
+                      iconName={getIconName(c.id)}
+                    />
+                  ),
+                }))}
+              />
             )}
-          </div>
+          </AnimatedSection>
+
         </div>
-        <Footer />
       </main>
+
+      <Footer />
     </>
   );
 }

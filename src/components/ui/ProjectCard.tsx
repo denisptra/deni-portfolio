@@ -1,157 +1,108 @@
 "use client";
 
-import { useState } from "react";
-import { ArrowUpRight, X } from "lucide-react";
-import { useApp } from "@/context/AppContext";
+import React from "react";
 import { MultilingualProject } from "@/data/portfolio";
+import { useApp } from "@/context/AppContext";
 
-export default function ProjectCard({ project }: { project: MultilingualProject }) {
-  const [isOpen, setIsOpen] = useState(false);
-  const { lang, t } = useApp();
+interface ProjectCardProps {
+  project: MultilingualProject;
+}
 
-  const title = project.title[lang] || project.title["en"];
-  const description = project.description[lang] || project.description["en"];
+export default function ProjectCard({ project }: ProjectCardProps) {
+  const { lang } = useApp();
+
+  // Category-based colors mapping
+  const getCategoryTheme = (stack: string[]) => {
+    const mainTech = stack[0]?.toLowerCase() || "";
+    if (mainTech.includes("next") || mainTech.includes("react") || mainTech.includes("express") || mainTech.includes("laravel")) {
+      return { bg: "bg-map-green", text: "text-white", border: "border-map-green" };
+    }
+    if (mainTech.includes("flutter") || mainTech.includes("mobile") || mainTech.includes("figma")) {
+      return { bg: "bg-map-purple", text: "text-white", border: "border-map-purple" };
+    }
+    if (mainTech.includes("unity") || mainTech.includes("game")) {
+      return { bg: "bg-map-pink", text: "text-white", border: "border-map-pink" };
+    }
+    if (mainTech.includes("arduino")) {
+      return { bg: "bg-archive-orange", text: "text-ink", border: "border-archive-orange" };
+    }
+    return { bg: "bg-carbon-blue", text: "text-white", border: "border-carbon-blue" };
+  };
+
+  const theme = getCategoryTheme(project.stack);
+  const titleText = project.title[lang] || project.title["en"];
+  const descText = project.description[lang] || project.description["en"];
+
+  // Determine category display name
+  const getCategoryName = (stack: string[]) => {
+    const mainTech = stack[0]?.toLowerCase() || "";
+    if (mainTech.includes("next") || mainTech.includes("react") || mainTech.includes("express") || mainTech.includes("laravel")) return "WEB DEV";
+    if (mainTech.includes("flutter") || mainTech.includes("mobile")) return "MOBILE";
+    if (mainTech.includes("figma")) return "UI/UX";
+    if (mainTech.includes("unity") || mainTech.includes("game")) return "GAME";
+    if (mainTech.includes("arduino")) return "ROBOTICS";
+    return "PROJECT";
+  };
+
+  const categoryName = getCategoryName(project.stack);
+  const isProcess = project.id === "pencak-silat-padjajaran" || project.id === "168-transportasi" || project.id === "cinego";
 
   return (
-    <>
-      {/* Premium Project Card */}
-      <div
-        className="group relative flex flex-col justify-between rounded-3xl bg-white border border-[#eef0f2] overflow-hidden cursor-pointer hover:border-blue-100 hover:-translate-y-1.5 duration-500 ease-out shadow-xs hover:shadow-xl select-none"
-        onClick={() => setIsOpen(true)}
-      >
-        {/* Card Image Header with floating tech tag */}
-        <div className="relative overflow-hidden aspect-[16/10] m-3 rounded-2xl border border-[#eef0f2] shadow-inner bg-[#fafaf9]">
-          {/* Grayscale hover to full color transform */}
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={project.imageUrl}
-            alt={title}
-            className="w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-103 group-hover:rotate-0.5"
-          />
-          
-          {/* Dark scrim overlay on card hover */}
-          <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-        </div>
-
-        {/* Card Content body */}
-        <div className="px-6 pb-6 pt-1 flex-grow flex flex-col justify-between">
-          <div>
-            {/* Project Title */}
-            <h3 className="text-base sm:text-lg font-bold text-[#37352f] mb-2 tracking-tight group-hover:text-[#1F9CF0] transition-colors duration-300">
-              {title}
-            </h3>
-            
-            {/* Description Teaser */}
-            <p className="text-[#37352f]/50 text-[12px] leading-relaxed line-clamp-2 font-medium">
-              {description}
-            </p>
-          </div>
-
-          <div className="mt-4">
-            {/* Tech Badges on the front card */}
-            <div className="flex flex-wrap gap-1 mb-4">
-              {project.stack.slice(0, 3).map((tech) => (
-                <span
-                  key={tech}
-                  className="bg-[#f1f1ef]/80 text-[#37352f]/60 text-[9px] font-bold px-2 py-1 rounded-md border border-[#eef0f2]/60 uppercase tracking-wider"
-                >
-                  {tech}
-                </span>
-              ))}
-              {project.stack.length > 3 && (
-                <span className="text-[9px] text-[#37352f]/40 font-bold px-1.5 py-1 flex items-center">
-                  +{project.stack.length - 3}
-                </span>
-              )}
-            </div>
-
-            {/* View Details Link with sliding arrow icon */}
-            <div className="flex items-center justify-between pt-3 border-t border-[#eef0f2]">
-              <span className="text-[9px] font-black text-[#37352f]/40 group-hover:text-black transition-colors uppercase tracking-[0.2em] flex items-center gap-1.5">
-                <span>{t.projects.viewDetails}</span>
-                <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
-              </span>
-            </div>
-          </div>
-        </div>
+    <article className="relative bg-paper border-thick border-ink brutal-shadow flex flex-col mt-10 group">
+      {/* Category Tab */}
+      <div className={`absolute -top-9 left-[-3px] ${theme.bg} ${theme.text} border-t-thick border-x-thick border-ink px-4 py-1.5 z-10 text-label-mono font-bold uppercase tracking-wider`}>
+        Kategori: {categoryName}
       </div>
 
-      {/* Detail Modal */}
-      {isOpen && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 bg-[#37352f]/20 backdrop-blur-[4px] animate-in fade-in duration-200">
-          <div className="absolute inset-0" onClick={() => setIsOpen(false)} />
-          <div className="relative bg-white w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-3xl shadow-2xl border border-[#eef0f2] animate-in slide-in-from-bottom-4 duration-300">
-            {/* Close button */}
-            <button
-              onClick={() => setIsOpen(false)}
-              className="absolute top-6 right-6 z-10 p-2.5 bg-white/90 rounded-full hover:bg-[#f1f1ef] transition-colors border border-[#eef0f2] shadow-sm cursor-pointer"
-            >
-              <X size={18} className="text-[#37352f]" />
-            </button>
-
-            {/* Project Image */}
-            <div className="p-4">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={project.imageUrl}
-                className="w-full aspect-video object-cover rounded-2xl"
-                alt={title}
-              />
-            </div>
-
-            {/* Modal Body */}
-            <div className="p-10 md:p-14 space-y-12">
-              <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
-                <h2 className="text-2xl md:text-3xl font-black text-[#37352f] tracking-tight leading-none">
-                  {title}
-                </h2>
-                {project.link && (
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center bg-[#1F9CF0] hover:bg-[#1581cc] text-white px-8 py-3.5 rounded-2xl font-bold text-xs transition-transform hover:scale-105 active:scale-95 shadow-xl shadow-blue-50/50"
-                  >
-                    {t.projects.livePreview}
-                    <ArrowUpRight className="ml-2 w-4 h-4" />
-                  </a>
-                )}
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-14 border-t border-[#eef0f2] pt-12">
-                {/* Left Description Column */}
-                <div className="md:col-span-2 space-y-6">
-                  <h4 className="font-black uppercase tracking-[0.25em] text-[#37352f]/20 text-[10px]">
-                    {t.projects.overview}
-                  </h4>
-                  <p className="text-[#37352f]/60 leading-relaxed text-[15px]">
-                    {description}
-                  </p>
-                </div>
-
-                {/* Right Stack Column */}
-                <div className="space-y-12">
-                  <div>
-                    <h4 className="font-black uppercase tracking-[0.25em] text-[#37352f]/20 text-[10px] mb-5">
-                      {t.projects.stack}
-                    </h4>
-                    <div className="flex flex-wrap gap-2">
-                      {project.stack.map((tech) => (
-                        <span
-                          key={tech}
-                          className="bg-[#f1f1ef] text-[#37352f]/60 px-4 py-1.5 rounded-xl text-[11px] font-bold border border-[#eef0f2]"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+      {/* Stamp (Selesai / Proses) */}
+      <div className={`absolute -top-4 right-4 z-20 ${isProcess ? "rotate-[15deg]" : "rotate-[-8deg]"} pointer-events-none`}>
+        {isProcess ? (
+          <div className="border-4 border-carbon-blue text-carbon-blue font-display text-sm font-bold uppercase px-3 py-1 bg-paper/90 shadow-[2px_2px_0px_0px_rgba(34,85,196,1)] backdrop-blur-sm mix-blend-multiply">
+            PROSES
           </div>
+        ) : (
+          <div className="border-4 border-stempel-red text-stempel-red font-display text-sm font-bold uppercase px-3 py-1 bg-paper/90 shadow-[2px_2px_0px_0px_rgba(232,67,44,1)] backdrop-blur-sm mix-blend-multiply">
+            SELESAI
+          </div>
+        )}
+      </div>
+
+      {/* Project Image Box */}
+      <div className="w-full h-64 border-b-thick border-ink overflow-hidden bg-surface-container relative">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,#141311_1px,transparent_0)] bg-[length:16px_16px] opacity-10"></div>
+        {project.imageUrl ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-500"
+            alt={titleText}
+            src={project.imageUrl}
+          />
+        ) : (
+          <div className="w-full h-full flex items-center justify-center text-data-technical text-on-surface-variant">NO_IMAGE.DAT</div>
+        )}
+      </div>
+
+      {/* Project details */}
+      <div className="p-6 flex flex-col flex-grow bg-surface">
+        <h2 className="text-headline-card text-ink uppercase mb-2">
+          {titleText}
+        </h2>
+        <p className="text-body-main text-on-surface-variant mb-6 line-clamp-3">
+          {descText}
+        </p>
+
+        {/* Tags */}
+        <div className="mt-auto pt-4 border-t-2 border-dashed border-outline-variant flex flex-wrap gap-2">
+          {project.stack.map((tech, idx) => (
+            <span
+              key={idx}
+              className="text-data-technical bg-paper px-2.5 py-1 border-[1.5px] border-ink text-ink brutal-shadow-sm"
+            >
+              {tech}
+            </span>
+          ))}
         </div>
-      )}
-    </>
+      </div>
+    </article>
   );
 }

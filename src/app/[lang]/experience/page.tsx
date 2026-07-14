@@ -2,9 +2,11 @@
 
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import PerforationStrip from "@/components/layout/PerforationStrip";
 import Breadcrumb from "@/components/ui/Breadcrumb";
-import CtaBanner from "@/components/ui/CtaBanner";
 import TimelineItem from "@/components/ui/TimelineItem";
+import AnimatedSection from "@/components/ui/AnimatedSection";
+import CardStack from "@/components/ui/CardStack";
 import { useApp } from "@/context/AppContext";
 
 export default function ExperiencePage() {
@@ -13,54 +15,62 @@ export default function ExperiencePage() {
   return (
     <>
       <Navbar />
-      <main className="bg-white min-h-screen flex flex-col justify-between">
-        <div className="py-12 animate-in fade-in duration-700 flex-grow">
-          {/* Header Section */}
-          <div className="max-w-4xl mx-auto px-6 mb-16">
-            <Breadcrumb />
-            <h1 className="text-2xl md:text-3xl font-black text-[#37352f] mb-3 tracking-tight">
-              {t.experience.title}
-            </h1>
-            <p className="text-[13px] text-[#37352f]/50 leading-relaxed font-medium">
-              {t.experience.subtitle}
-            </p>
-          </div>
+      <PerforationStrip />
 
-          {/* Timeline Section */}
-          <div className="max-w-4xl mx-auto px-6 mb-20">
-            {isLoading ? (
-              <div className="space-y-6">
-                {[1, 2, 3].map((r) => (
-                  <div key={r} className="h-40 bg-gray-50 rounded-3xl animate-pulse" />
-                ))}
+      <main className="md:pl-perforation-width px-margin-mobile md:px-margin-desktop py-12 max-w-container-max mx-auto">
+        <div className="w-full flex flex-col gap-8 items-center">
+
+          <Breadcrumb />
+
+          {/* Experience Section */}
+          <AnimatedSection className="relative w-full text-center">
+            {/* Tab */}
+            <div className="inline-block bg-carbon-blue text-white border-t-thick border-x-thick border-ink px-4 py-2 text-label-mono font-bold uppercase relative z-10 -mb-[3px]">
+              RIWAYAT PEKERJAAN
+            </div>
+
+            <div className="border-thick border-ink bg-paper p-6 md:p-8 brutal-shadow relative text-left">
+              <h2 className="text-headline-section text-ink mb-12 uppercase border-b-2 border-dashed border-ink pb-4">
+                Track Record Pekerjaan &amp; Organisasi
+              </h2>
+
+              <div className="relative pl-8 md:pl-12">
+                {/* Vertical Timeline Line */}
+                <div className="absolute left-[11px] md:left-[19px] top-2 bottom-0 w-[3px] bg-carbon-blue z-0"></div>
+
+                {isLoading ? (
+                  <div className="space-y-6">
+                    {[1, 2, 3].map((r) => (
+                      <div key={r} className="h-40 bg-surface-container border-2 border-ink animate-pulse" />
+                    ))}
+                  </div>
+                ) : (
+                  <CardStack
+                    items={data.experiences.map((r) => ({
+                      id: r.id,
+                      content: (
+                        <div className="relative z-10 mb-4 last:mb-0">
+                          <TimelineItem
+                            title={r.title[lang] || r.title["en"]}
+                            subtitle={r.company}
+                            location={r.location}
+                            period={r.period}
+                            description={r.description[lang] || r.description["en"]}
+                            iconType={r.iconType}
+                          />
+                        </div>
+                      ),
+                    }))}
+                  />
+                )}
               </div>
-            ) : (
-              data.experiences.map((r) => (
-                <TimelineItem
-                  key={r.id}
-                  title={r.title[lang] || r.title["en"]}
-                  subtitle={r.company}
-                  location={r.location}
-                  period={r.period}
-                  description={r.description[lang] || r.description["en"]}
-                  iconType={r.iconType}
-                />
-              ))
-            )}
-          </div>
+            </div>
+          </AnimatedSection>
 
-          {/* CV Download Banner */}
-          <CtaBanner
-            emoji="👀"
-            title={t.experience.ctaTitle}
-            subtitle={t.cta.subtitle}
-            buttonText={t.experience.ctaBtn}
-            href="/Deni-Trio-Saputra-UI-UX.pdf"
-            download="Deni Trio Saputra - UI UX.pdf"
-          />
         </div>
-        <Footer />
       </main>
+
+      <Footer />
     </>
   );
 }

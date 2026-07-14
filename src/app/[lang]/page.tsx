@@ -1,70 +1,75 @@
 "use client";
 
-import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import PerforationStrip from "@/components/layout/PerforationStrip";
 import HeroSection from "@/components/sections/HeroSection";
 import ToolsSection from "@/components/sections/ToolsSection";
 import ProjectCard from "@/components/ui/ProjectCard";
-import CtaBanner from "@/components/ui/CtaBanner";
+import AnimatedSection from "@/components/ui/AnimatedSection";
+import CardStack from "@/components/ui/CardStack";
+import Link from "next/link";
 import { useApp } from "@/context/AppContext";
 
 export default function Home() {
   const { data, t, lang } = useApp();
-
-  // Teaser displays first 2 projects
-  const teaserProjects = data.projects.slice(0, 2);
+  const teaserProjects = data.projects.slice(0, 4);
 
   return (
     <>
       <Navbar />
-      <main className="bg-white min-h-screen">
-        <HeroSection />
-        
-        {/* Spacer & Tools Section */}
-        <ToolsSection />
+      <PerforationStrip />
 
-        {/* Projects Teaser Section */}
-        <section className="py-24 px-6 bg-white border-b border-[#eef0f2]">
-          <div className="max-w-7xl mx-auto">
-            {/* Header */}
-            <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-              <div>
-                <p className="text-[10px] font-black uppercase tracking-[0.25em] text-[#37352f]/30 mb-4">
-                  {t.projects.portfolioTitle}
-                </p>
-                <h2 className="text-3xl md:text-5xl font-black text-[#37352f] tracking-tight">
-                  {t.projects.title}
+      <main className="md:pl-perforation-width px-margin-mobile md:px-margin-desktop py-12 max-w-container-max mx-auto">
+        <div className="flex flex-col gap-24 items-center">
+
+          <AnimatedSection className="w-full">
+            <HeroSection />
+          </AnimatedSection>
+
+          <AnimatedSection className="w-full">
+            <ToolsSection />
+          </AnimatedSection>
+
+          <hr className="dashed-divider w-full" />
+
+          {/* Project Teaser Section */}
+          <AnimatedSection className="w-full text-center">
+            <div className="inline-block bg-map-green border-t-thick border-x-thick border-ink px-4 py-2 text-label-mono font-bold text-white uppercase relative z-10 -mb-[3px]">
+              DOKUMEN: PROYEK_UNGGULAN
+            </div>
+
+            <div className="border-thick border-ink bg-paper p-6 md:p-8 brutal-shadow relative">
+              <div className="flex flex-col md:flex-row justify-between items-baseline mb-8 border-b-2 border-dashed border-ink pb-4 gap-4">
+                <h2 className="text-headline-section text-ink uppercase">
+                  Arsip Proyek Pilihan
                 </h2>
+                <Link
+                  href={`/${lang}/projects`}
+                  className="px-4 py-2 bg-archive-yellow border-2 border-ink text-ink text-label-mono font-bold uppercase brutal-shadow-sm hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all inline-flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-ink focus:ring-offset-2"
+                >
+                  <span className="material-symbols-outlined text-[16px]">folder_open</span>
+                  {t.projects.showMore || "Lihat Semua Proyek"}
+                </Link>
               </div>
-              
-              <Link
-                href={`/${lang}/projects`}
-                className="inline-flex items-center text-xs font-bold text-[#1F9CF0] hover:text-[#1581cc] transition-colors gap-1 uppercase tracking-widest self-start md:self-auto"
-              >
-                <span>{t.projects.showMore}</span>
-                <ArrowUpRight className="w-4 h-4" />
-              </Link>
-            </div>
 
-            {/* Grid layout - 2 Columns for teaser */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-              {teaserProjects.map((project) => (
-                <ProjectCard key={project.id} project={project} />
-              ))}
+              <CardStack
+                className="w-full"
+                items={teaserProjects.slice(0, 4).map((p) => ({
+                  id: p.id,
+                  content: (
+                    <div className="w-full">
+                      <ProjectCard project={p} />
+                    </div>
+                  ),
+                }))}
+              />
             </div>
-          </div>
-        </section>
+          </AnimatedSection>
 
-        {/* Call To Action Banner */}
-        <CtaBanner
-          emoji="⚡"
-          title={t.cta.title}
-          subtitle={t.cta.subtitle}
-          buttonText={t.cta.sayHello}
-        />
+        </div>
       </main>
+
       <Footer />
     </>
   );
