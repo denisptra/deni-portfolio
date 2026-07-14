@@ -33,25 +33,6 @@ export default function Navbar() {
           ARSIP<span className="text-stempel-red">.</span>DIGITAL
         </Link>
 
-        <nav className="hidden md:flex items-center gap-1" aria-label="Main navigation">
-          {navItems.map((item, idx) => (
-            <Link
-              key={idx}
-              href={item.path}
-              className={`flex items-center h-[70px] px-3 xl:px-4 text-label-mono font-bold uppercase tracking-wider transition-colors border-b-thick whitespace-nowrap ${
-                isActive(item.path)
-                  ? "text-ink border-stempel-red bg-surface-container-low"
-                  : "text-on-surface-variant border-transparent hover:text-ink hover:border-outline"
-              }`}
-            >
-              {item.name}
-            </Link>
-          ))}
-          <div className="ml-4 text-data-technical text-ink border-2 border-ink px-3 py-1 bg-surface brutal-shadow-sm whitespace-nowrap">
-            No: 001/DTS/VII/2026
-          </div>
-        </nav>
-
         <button
           className="md:hidden p-2 border-2 border-ink bg-surface text-ink"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -59,6 +40,22 @@ export default function Navbar() {
         >
           {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
         </button>
+
+        <nav className="hidden md:flex items-center gap-1 overflow-x-auto" aria-label="Main navigation">
+          {navItems.map((item, idx) => (
+            <Link
+              key={idx}
+              href={item.path}
+              className={`flex items-center px-3 xl:px-4 text-label-mono font-bold uppercase tracking-wider transition-colors border-b-thick whitespace-nowrap ${
+                isActive(item.path)
+                  ? "text-ink border-stempel-red bg-surface-container-low"
+                  : "text-on-surface-variant border-transparent hover:text-ink hover:border-outline hover:bg-surface-container-low"
+              }`}
+            >
+              {item.name}
+            </Link>
+          ))}
+        </nav>
       </div>
 
       {mobileMenuOpen && (
@@ -68,7 +65,7 @@ export default function Navbar() {
               key={idx}
               href={item.path}
               onClick={() => setMobileMenuOpen(false)}
-              className={`px-4 py-3 border-2 border-ink text-label-mono font-bold uppercase text-sm ${
+              className={`p-3 border-2 border-ink text-label-mono font-bold uppercase text-sm ${
                 isActive(item.path) ? "bg-archive-yellow text-ink" : "bg-surface text-on-surface-variant"
               }`}
             >
