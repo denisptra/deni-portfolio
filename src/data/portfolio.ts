@@ -44,6 +44,16 @@ export interface LocalDatabase {
   achievements: Achievement[];
 }
 
+export function isLocalDatabase(obj: any): obj is LocalDatabase {
+  if (!obj || typeof obj !== "object") return false;
+  if (!Array.isArray(obj.projects) || !Array.isArray(obj.experiences) || !Array.isArray(obj.education) || !Array.isArray(obj.achievements)) return false;
+  if (obj.projects.length > 0 && typeof obj.projects[0]?.title !== "string") return false;
+  if (obj.experiences.length > 0 && typeof obj.experiences[0]?.title !== "string") return false;
+  if (obj.education.length > 0 && typeof obj.education[0]?.title !== "string") return false;
+  if (obj.achievements.length > 0 && typeof obj.achievements[0]?.title !== "string") return false;
+  return true;
+}
+
 export const defaultData: LocalDatabase = {
   projects: [
     {

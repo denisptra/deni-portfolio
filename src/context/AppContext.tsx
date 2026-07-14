@@ -1,7 +1,7 @@
 "use client";
 
-import React, { createContext, useState, useEffect, useContext, ReactNode } from "react";
-import { defaultData, LocalDatabase } from "@/data/portfolio";
+import React, { createContext, useState, useEffect, useContext, ReactNode, useCallback } from "react";
+import { defaultData, LocalDatabase, isLocalDatabase } from "@/data/portfolio";
 
 interface AppContextType {
   t: typeof idTexts;
@@ -47,9 +47,20 @@ export function AppProvider({ children }: { children: ReactNode }) {
       try {
         const savedData = localStorage.getItem("portfolio_data");
         if (savedData) {
-          setData(JSON.parse(savedData));
-          setIsLoading(false);
-          return;
+          try {
+            const parsed = JSON.parse(savedData);
+            // Clear localStorage if data is old bilingual format (has en/id keys)
+            if (parsed?.projects?.[0]?.title?.en || parsed?.projects?.[0]?.title?.id) {
+              console.warn("Detected old bilingual data format, clearing localStorage cache.");
+              localStorage.removeItem("portfolio_data");
+            } else if (isLocalDatabase(parsed)) {
+              setData(parsed);
+              setIsLoading(false);
+              return;
+            }
+          } catch {
+            localStorage.removeItem("portfolio_data");
+          }
         }
         const res = await fetch("/data.json");
         if (res.ok) {
