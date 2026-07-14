@@ -24,9 +24,9 @@ export default function Navbar() {
   };
 
   return (
-    <header className="bg-paper border-b-thick border-ink brutal-shadow sticky top-0 z-50 min-h-[60px] md:min-h-[70px]">
-      <div className="flex flex-col md:flex-row justify-between items-stretch w-full px-4 md:px-margin-desktop max-w-full mx-auto h-full">
-        <div className="flex justify-between items-center py-3 md:py-0 md:self-center">
+    <header className="bg-paper border-b-thick border-ink brutal-shadow sticky top-0 z-50 min-h-[60px] md:min-h-[70px] flex items-center">
+      <div className="flex flex-col md:flex-row justify-between items-stretch md:items-center w-full px-4 md:px-margin-desktop max-w-full mx-auto">
+        <div className="flex justify-between items-center min-h-[60px] md:min-h-0 md:py-0 md:self-center">
           <Link
             href="/"
             className="font-display text-xl md:text-2xl font-bold uppercase tracking-tight text-ink hover:text-archive-orange transition-colors"
@@ -42,7 +42,7 @@ export default function Navbar() {
           </button>
         </div>
 
-        <nav className="hidden md:flex items-center gap-1 self-stretch overflow-x-auto" aria-label="Main navigation">
+        <nav className="hidden md:flex md:self-stretch items-center gap-1 overflow-x-auto" aria-label="Main navigation">
           {navItems.map((item, idx) => (
             <Link
               key={idx}
@@ -58,7 +58,7 @@ export default function Navbar() {
           ))}
         </nav>
 
-        <div className="hidden md:flex items-center gap-4 py-4 md:py-0">
+        <div className="hidden md:flex items-center gap-4">
           <div className="hidden lg:block text-data-technical text-ink border-2 border-ink px-3 py-1 bg-surface brutal-shadow-sm whitespace-nowrap">
             No: 001/DTS/VII/2026
           </div>

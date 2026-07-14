@@ -16,44 +16,23 @@ const ibmPlexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "ARSIP DIGITAL | Deni Trio Saputra",
-  description:
-    "Arsip Digital Portfolio — Deni Trio Saputra. Web & Mobile Developer, UI/UX Designer. Berkas resmi keahlian, proyek, dan pengalaman profesional.",
+  title: "Deni Trio Saputra — Portfolio",
+  description: "Portfolio Deni Trio Saputra — Web & Mobile Developer, UI/UX Designer.",
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
     apple: "/favicon.svg",
   },
-  keywords: [
-    "Deni Trio Saputra",
-    "Arsip Digital",
-    "Portfolio",
-    "Web Developer",
-    "UI/UX Designer",
-    "Mobile Developer",
-    "Next.js",
-    "React",
-    "Frontend Developer",
-  ],
-  authors: [{ name: "Deni Trio Saputra" }],
-  creator: "Deni Trio Saputra",
   openGraph: {
-    title: "ARSIP DIGITAL | Deni Trio Saputra",
-    description:
-      "Arsip Digital Portfolio — Deni Trio Saputra. Web & Mobile Developer, UI/UX Designer.",
+    title: "Deni Trio Saputra — Portfolio",
+    description: "Portfolio Deni Trio Saputra — Web & Mobile Developer, UI/UX Designer.",
     type: "website",
     locale: "id_ID",
-    siteName: "Arsip Digital — DTS Portfolio",
   },
   twitter: {
     card: "summary_large_image",
-    title: "ARSIP DIGITAL | Deni Trio Saputra",
-    description:
-      "Arsip Digital Portfolio — Deni Trio Saputra. Web & Mobile Developer, UI/UX Designer.",
-  },
-  robots: {
-    index: true,
-    follow: true,
+    title: "Deni Trio Saputra — Portfolio",
+    description: "Portfolio Deni Trio Saputra — Web & Mobile Developer, UI/UX Designer.",
   },
 };
 
