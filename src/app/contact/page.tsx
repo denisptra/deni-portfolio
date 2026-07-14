@@ -5,11 +5,9 @@ import Footer from "@/components/layout/Footer";
 import PerforationStrip from "@/components/layout/PerforationStrip";
 import Breadcrumb from "@/components/ui/Breadcrumb";
 import AnimatedSection from "@/components/ui/AnimatedSection";
-import { useApp } from "@/context/AppContext";
 import { useState, FormEvent } from "react";
 
 export default function ContactPage() {
-  const { t } = useApp();
   const [formState, setFormState] = useState({ name: "", email: "", message: "" });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitted, setSubmitted] = useState(false);
@@ -43,7 +41,7 @@ export default function ContactPage() {
       <Navbar />
       <PerforationStrip />
 
-      <main className="md:pl-perforation-width px-margin-mobile md:px-margin-desktop py-12 max-w-container-max mx-auto">
+      <main className="md:pl-perforation-width px-4 md:px-margin-desktop py-6 md:py-12 max-w-container-max mx-auto">
         <div className="w-full flex flex-col gap-8 items-center">
 
           <Breadcrumb />

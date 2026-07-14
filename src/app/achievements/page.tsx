@@ -10,7 +10,7 @@ import CardStack from "@/components/ui/CardStack";
 import { useApp } from "@/context/AppContext";
 
 export default function AchievementsPage() {
-  const { data, t, isLoading, lang } = useApp();
+  const { data, isLoading } = useApp();
 
   // Mapping categorizations for badges
   const getCategoryName = (id: string) => {
@@ -38,7 +38,7 @@ export default function AchievementsPage() {
       <Navbar />
       <PerforationStrip />
 
-      <main className="md:pl-perforation-width px-margin-mobile md:px-margin-desktop py-12 max-w-container-max mx-auto">
+      <main className="md:pl-perforation-width px-4 md:px-margin-desktop py-6 md:py-12 max-w-container-max mx-auto">
         <div className="w-full flex flex-col gap-8 items-center">
 
           <Breadcrumb />
@@ -71,8 +71,8 @@ export default function AchievementsPage() {
                   content: (
                     <CertCard
                       category={getCategoryName(c.id)}
-                      title={c.title[lang] || c.title["en"]}
-                      description={c.description[lang] || c.description["en"]}
+                      title={c.title}
+                      description={c.description}
                       issuer={c.issuer}
                       date={c.date}
                       iconName={getIconName(c.id)}

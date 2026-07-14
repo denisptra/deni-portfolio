@@ -10,14 +10,14 @@ import CardStack from "@/components/ui/CardStack";
 import { useApp } from "@/context/AppContext";
 
 export default function ExperiencePage() {
-  const { data, t, isLoading, lang } = useApp();
+  const { data, isLoading } = useApp();
 
   return (
     <>
       <Navbar />
       <PerforationStrip />
 
-      <main className="md:pl-perforation-width px-margin-mobile md:px-margin-desktop py-12 max-w-container-max mx-auto">
+      <main className="md:pl-perforation-width px-4 md:px-margin-desktop py-6 md:py-12 max-w-container-max mx-auto">
         <div className="w-full flex flex-col gap-8 items-center">
 
           <Breadcrumb />
@@ -51,11 +51,11 @@ export default function ExperiencePage() {
                       content: (
                         <div className="relative z-10 mb-4 last:mb-0">
                           <TimelineItem
-                            title={r.title[lang] || r.title["en"]}
+                            title={r.title}
                             subtitle={r.company}
                             location={r.location}
                             period={r.period}
-                            description={r.description[lang] || r.description["en"]}
+                            description={r.description}
                             iconType={r.iconType}
                           />
                         </div>

@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { useApp } from "@/context/AppContext";
 
 interface CtaBannerProps {
   variant?: "light" | "dark";
@@ -23,7 +22,6 @@ export default function CtaBanner({
   download,
 }: CtaBannerProps) {
   const isDark = variant === "dark";
-  const { lang } = useApp();
 
   return (
     <section className="py-24 px-6 bg-white">
@@ -62,7 +60,7 @@ export default function CtaBanner({
             </a>
           ) : (
             <Link
-              href={href || `/${lang}/contact`}
+              href={href || "/contact"}
               className="bg-white hover:bg-gray-100 text-black px-10 md:px-12 py-4 md:py-5 rounded-2xl font-bold transition-all shadow-xl hover:scale-105 active:scale-95 text-lg text-center"
             >
               {buttonText}

@@ -11,7 +11,7 @@ import { useApp } from "@/context/AppContext";
 import { useState } from "react";
 
 export default function ProjectsPage() {
-  const { data, t, isLoading } = useApp();
+  const { data, isLoading } = useApp();
   const [filter, setFilter] = useState("SEMUA");
 
   const categories = [
@@ -40,7 +40,7 @@ export default function ProjectsPage() {
       <Navbar />
       <PerforationStrip />
 
-      <main className="md:pl-perforation-width px-margin-mobile md:px-margin-desktop py-12 max-w-container-max mx-auto">
+      <main className="md:pl-perforation-width px-4 md:px-margin-desktop py-6 md:py-12 max-w-container-max mx-auto">
         <div className="flex flex-col gap-8 items-center">
 
           <Breadcrumb />

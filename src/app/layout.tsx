@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
+import { AppProvider } from "@/context/AppContext";
 
 const ibmPlexSans = IBM_Plex_Sans({
   subsets: ["latin"],
@@ -62,9 +63,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="id">
       <head>
-        {/* Space Mono loaded via link since next/font/google doesn't support it */}
         <link
           href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap"
           rel="stylesheet"
@@ -75,7 +75,9 @@ export default function RootLayout({
         />
       </head>
       <body className={`${ibmPlexSans.variable} ${ibmPlexMono.variable} antialiased`}>
-        {children}
+        <AppProvider>
+          {children}
+        </AppProvider>
       </body>
     </html>
   );

@@ -6,24 +6,22 @@ import PerforationStrip from "@/components/layout/PerforationStrip";
 import Breadcrumb from "@/components/ui/Breadcrumb";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import AnimatedCard from "@/components/ui/AnimatedCard";
-import { useApp } from "@/context/AppContext";
 
 export default function AboutPage() {
-  const { t } = useApp();
 
   return (
     <>
       <Navbar />
       <PerforationStrip />
 
-      <main className="md:pl-perforation-width px-margin-mobile md:px-margin-desktop py-12 max-w-container-max mx-auto">
+      <main className="md:pl-perforation-width px-4 md:px-margin-desktop py-6 md:py-12 max-w-container-max mx-auto">
         <div className="w-full flex flex-col gap-8 items-center">
 
           <Breadcrumb />
 
           {/* Bio Section Card */}
           <AnimatedCard className="w-full">
-            <div className="bg-paper border-thick border-ink p-6 md:p-12 brutal-shadow relative mt-6">
+            <div className="bg-paper border-thick border-ink p-4 md:p-12 brutal-shadow relative mt-6">
               <div className="absolute top-0 left-0 w-full h-2 border-t-4 border-dashed border-ink opacity-30 mt-1"></div>
 
               <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-gutter mt-4">

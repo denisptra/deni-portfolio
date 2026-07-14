@@ -1,12 +1,10 @@
 "use client";
 
 import React, { createContext, useState, useEffect, useContext, ReactNode } from "react";
-import { translations, defaultData, LocalDatabase, TranslationText } from "@/data/portfolio";
+import { defaultData, LocalDatabase } from "@/data/portfolio";
 
 interface AppContextType {
-  lang: "en" | "id";
-  setLang: (lang: "en" | "id") => void;
-  t: TranslationText;
+  t: typeof idTexts;
   data: LocalDatabase;
   isLoading: boolean;
   updateData: (newData: LocalDatabase) => void;
@@ -14,28 +12,35 @@ interface AppContextType {
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
 
-export function AppProvider({ children, initialLang = "en" }: { children: ReactNode, initialLang?: "en" | "id" }) {
-  const [lang, setLangState] = useState<"en" | "id">(initialLang);
+const idTexts = {
+  nav: {
+    about: "Tentang",
+    experience: "Pengalaman",
+    education: "Pendidikan",
+    portfolio: "Proyek",
+    achievements: "Sertifikat",
+    contact: "Kontak",
+  },
+  hero: {
+    badge: "AKTIF MENCARI PELUANG",
+    showMore: "Lihat Semua Proyek",
+  },
+  study: {
+    title: "Tingkat Pendidikan",
+    subtitle: "Fondasi pengetahuan teknis dan perkembangan akademik saya.",
+  },
+  experience: {
+    ctaTitle: "Ingin melihat resume lengkap saya?",
+    ctaBtn: "Unduh PDF",
+  },
+  cta: {
+    subtitle: "Silakan unduh PDF resume saya untuk informasi lebih lengkap.",
+  },
+};
+
+export function AppProvider({ children }: { children: ReactNode }) {
   const [data, setData] = useState<LocalDatabase>(defaultData);
   const [isLoading, setIsLoading] = useState(true);
-
-  // Sync lang state if initialLang prop changes (e.g. navigation)
-  useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setLangState(initialLang);
-    document.documentElement.lang = initialLang;
-  }, [initialLang]);
-
-  const setLang = (newLang: "en" | "id") => {
-    setLangState(newLang);
-    localStorage.setItem("app_lang", newLang);
-    // Optionally redirect to the new lang path
-    const currentPath = window.location.pathname;
-    const newPath = currentPath.replace(/^\/(en|id)/, `/${newLang}`);
-    if (newPath !== currentPath) {
-      window.location.href = newPath;
-    }
-  };
 
   useEffect(() => {
     async function loadData() {
@@ -46,13 +51,10 @@ export function AppProvider({ children, initialLang = "en" }: { children: ReactN
           setIsLoading(false);
           return;
         }
-
         const res = await fetch("/data.json");
         if (res.ok) {
           const fetchedData = await res.json();
           setData(fetchedData);
-        } else {
-          console.warn("Failed to fetch data.json, using defaultData.");
         }
       } catch (err) {
         console.error("Error loading dynamic data:", err);
@@ -68,10 +70,8 @@ export function AppProvider({ children, initialLang = "en" }: { children: ReactN
     localStorage.setItem("portfolio_data", JSON.stringify(newData));
   };
 
-  const t = translations[lang];
-
   return (
-    <AppContext.Provider value={{ lang, setLang, t, data, isLoading, updateData }}>
+    <AppContext.Provider value={{ t: idTexts, data, isLoading, updateData }}>
       {children}
     </AppContext.Provider>
   );

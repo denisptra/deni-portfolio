@@ -11,14 +11,14 @@ import CardStack from "@/components/ui/CardStack";
 import { useApp } from "@/context/AppContext";
 
 export default function StudyPage() {
-  const { data, t, isLoading, lang } = useApp();
+  const { data, isLoading } = useApp();
 
   return (
     <>
       <Navbar />
       <PerforationStrip />
 
-      <main className="md:pl-perforation-width px-margin-mobile md:px-margin-desktop py-12 max-w-container-max mx-auto">
+      <main className="md:pl-perforation-width px-4 md:px-margin-desktop py-6 md:py-12 max-w-container-max mx-auto">
         <div className="w-full flex flex-col gap-8 items-center">
 
           <Breadcrumb />
@@ -28,10 +28,10 @@ export default function StudyPage() {
             <div className="border-b-thick border-dashed border-ink pb-8 mt-6">
               <span className="text-label-mono text-on-surface-variant block mb-2 uppercase">Dokumen Identifikasi</span>
               <h1 className="text-display-hero-mobile md:text-display-hero text-ink uppercase">
-                {t.study.title}
+                Tingkat Pendidikan
               </h1>
               <p className="text-data-technical text-on-surface-variant mt-2">
-                {t.study.subtitle}
+                Fondasi pengetahuan teknis dan perkembangan akademik saya.
               </p>
             </div>
           </AnimatedSection>
@@ -63,11 +63,11 @@ export default function StudyPage() {
                       content: (
                         <div className="relative z-10 mb-4 last:mb-0">
                           <TimelineItem
-                            title={r.title[lang] || r.title["en"]}
+                            title={r.title}
                             subtitle={r.institution}
                             location={r.location}
                             period={r.period}
-                            description={r.description[lang] || r.description["en"]}
+                            description={r.description}
                             iconType={r.iconType}
                           />
                         </div>
@@ -83,9 +83,9 @@ export default function StudyPage() {
           <div className="w-full">
             <CtaBanner
               emoji="🎓"
-              title={t.experience.ctaTitle}
-              subtitle={t.cta.subtitle}
-              buttonText={t.experience.ctaBtn}
+              title="Ingin melihat resume lengkap saya?"
+              subtitle="Silakan unduh PDF resume saya untuk informasi lebih lengkap."
+              buttonText="Unduh PDF"
               href="/Deni-Trio-Saputra-UI-UX.pdf"
               download="Deni Trio Saputra - UI UX.pdf"
             />
