@@ -30,6 +30,7 @@ export const metadata: Metadata = {
   },
   description:
     "Portfolio of Deni Trio Saputra — Multidisciplinary Creative Technologist specializing in web, mobile, and interactive experiences.",
+  icons: { icon: "/favicon.svg" },
 };
 
 export default function RootLayout({
