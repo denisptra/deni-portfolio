@@ -5,26 +5,38 @@ import { useRouter } from "next/navigation";
 import PuzzleExperience from "@/components/PuzzleExperience";
 import StarField from "@/components/StarField";
 
-function shouldSkipPuzzle() {
+function hasCompletedPuzzle() {
   if (typeof window === "undefined") return false;
+  return localStorage.getItem("puzzle_completed") === "true";
+}
+
+function getRedirectPath() {
+  if (typeof window === "undefined") return null;
   const params = new URLSearchParams(window.location.search);
-  return params.get("direct") === "true";
+  return params.get("r");
 }
 
 export default function Home() {
   const router = useRouter();
 
   useEffect(() => {
-    if (shouldSkipPuzzle()) {
-      router.replace("/home");
+    const rPath = getRedirectPath();
+    if (hasCompletedPuzzle()) {
+      router.replace(rPath || "/home");
+    } else if (rPath && rPath !== "/") {
+      // User refreshed on a sub-page, redirect to that page after puzzle
+      sessionStorage.setItem("pending_redirect", rPath);
     }
   }, [router]);
 
   const handleComplete = useCallback(() => {
-    router.push("/home");
+    localStorage.setItem("puzzle_completed", "true");
+    const pending = sessionStorage.getItem("pending_redirect");
+    sessionStorage.removeItem("pending_redirect");
+    router.push(pending || "/home");
   }, [router]);
 
-  if (shouldSkipPuzzle()) {
+  if (hasCompletedPuzzle()) {
     return null;
   }
 

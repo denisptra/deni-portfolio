@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script>
+    // GitHub Pages 404 redirect — sends user back to index with path info
+    var path = window.location.pathname;
+    var repo = path.match(/^\/[^\/]*/)[0];
+    // Store the intended path and redirect to root
+    window.location.replace(repo + '/?r=' + encodeURIComponent(path));
+  </script>
+</head>
+<body></body>
+</html>
