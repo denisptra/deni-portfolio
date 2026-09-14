@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 
 const projects = [
   {
@@ -8,105 +9,94 @@ const projects = [
     title: "Sidomulyobatu.id",
     category: "UI/UX & Web Dev",
     description: "Website resmi Desa Sidomulyo Batu dengan fitur profil desa, berita, galeri, dan layanan administrasi online.",
-    tags: ["WordPress", "PHP", "Responsive"],
     color: "#059669",
-    icon: "🏘️",
     url: "https://sidomulyobatu.id",
+    screenshot: "https://image.thum.io/get/width/600/crop/400/https://sidomulyobatu.id",
   },
   {
     id: 2,
     title: "Padjadjaran Pusat",
     category: "UI/UX & Web Dev",
     description: "Website organisasi Padjadjaran Pusat dengan sistem manajemen konten dan informasi kegiatan.",
-    tags: ["Laravel", "MySQL", "Bootstrap"],
     color: "#1a3a6e",
-    icon: "🏛️",
     url: "https://padjadjaranpusat.org",
+    screenshot: "https://image.thum.io/get/width/600/crop/400/https://padjadjaranpusat.org",
   },
   {
     id: 3,
     title: "Oryza Loka Basa",
     category: "UI/UX & Web Dev",
     description: "Website company profile PT Oryza Loka Basa dengan showcase produk beras premium dan sistem ordering.",
-    tags: ["Next.js", "Tailwind", "Vercel"],
     color: "#7c3aed",
-    icon: "🌾",
     url: "https://oryzalokabasa.com",
+    screenshot: "https://image.thum.io/get/width/600/crop/400/https://oryzalokabasa.com",
   },
   {
     id: 4,
     title: "Agrowisata Darangdan",
     category: "UI/UX & Web Dev",
     description: "Website agrowisata untuk Oryza Loka Basa dengan informasi wisata, booking, dan gallery foto.",
-    tags: ["React", "Node.js", "Maps API"],
     color: "#059669",
-    icon: "🌿",
     url: "https://agrowisatadarangdan.oryzalokabasa.com",
+    screenshot: "https://image.thum.io/get/width/600/crop/400/https://agrowisatadarangdan.oryzalokabasa.com",
   },
   {
     id: 5,
     title: "Artics Digital Strategy",
     category: "UI/UX & Web Dev",
     description: "Desain UI/UX untuk agency digital strategy. Meliputi landing page, dashboard, dan sistem manajemen klien.",
-    tags: ["Figma", "Prototyping", "Design System"],
     color: "#e85d3a",
-    icon: "🎯",
+    screenshot: "",
   },
   {
     id: 6,
     title: "Nukang",
     category: "UI/UX Design",
     description: "Desain UI/UX aplikasi mobile untuk jasa tukang bangunan. Memudahkan pengguna mencari dan memesan jasa tukang terpercaya.",
-    tags: ["Figma", "Mobile Design", "Prototyping"],
     color: "#f59e0b",
-    icon: "🔨",
+    screenshot: "",
   },
   {
     id: 7,
     title: "Phalanxium",
     category: "UI/UX Design",
     description: "Desain UI/UX game action strategy dengan mekanik pertahanan formasi untuk platform PC.",
-    tags: ["Figma", "Game UI", "Prototype"],
     color: "#dc2626",
-    icon: "⚔️",
+    screenshot: "",
   },
   {
     id: 8,
     title: "Health Mobile Apps",
     category: "UI/UX Design",
     description: "Desain UI/UX aplikasi mobile kesehatan dengan fitur tracking aktivitas, jadwal minum obat, dan konsultasi dokter.",
-    tags: ["Figma", "Health Tech", "Mobile Design"],
     color: "#0ea5e9",
-    icon: "💊",
+    screenshot: "",
   },
   {
     id: 9,
     title: "168 Trans",
     category: "UI/UX & Apps",
     description: "Desain UI/UX dan aplikasi jasa transportasi dan ekspedisi dengan sistem booking, tracking, dan manajemen armada.",
-    tags: ["Figma", "Mobile App", "Booking System"],
     color: "#1a1a2e",
-    icon: "🚛",
+    screenshot: "",
   },
   {
     id: 10,
     title: "Museum Game",
     category: "Game Development",
     description: "Game edukasi VR tentang sejarah museum Indonesia. Pemain menjelajahi ruangan dan menemukan artefak bersejarah.",
-    tags: ["Unity", "C#", "VR"],
     color: "#8b5cf6",
-    icon: "🏛️",
     url: "https://polytato.itch.io/uts-vr001-kelompok1",
+    screenshot: "https://image.thum.io/get/width/600/crop/400/https://polytato.itch.io/uts-vr001-kelompok1",
   },
   {
     id: 11,
     title: "Kapur Game",
     category: "Game Development",
     description: "Game puzzle VR kasual dengan tema kapur tulis. Nikmati sensasi bermain dengan grafik unik chalk art style.",
-    tags: ["Unity", "C#", "VR"],
     color: "#ec4899",
-    icon: "✏️",
     url: "https://polytato.itch.io/uas-vr001-kelompok1",
+    screenshot: "https://image.thum.io/get/width/600/crop/400/https://polytato.itch.io/uas-vr001-kelompok1",
   },
 ];
 
@@ -141,15 +131,26 @@ export default function ProjectsPage() {
               rel={project.url ? "noopener noreferrer" : undefined}
               className="block bg-white rounded-2xl shadow-[0_2px_20px_rgba(0,0,0,0.04)] overflow-hidden hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-all hover:-translate-y-1 group"
             >
-              <div
-                className="h-[110px] md:h-[130px] flex items-center justify-center relative overflow-hidden"
-                style={{ backgroundColor: project.color + "12" }}
-              >
-                <span className="text-[3rem] md:text-[3.5rem] group-hover:scale-110 transition-transform duration-300">
-                  {project.icon}
-                </span>
-                <div className="absolute w-[60px] md:w-[80px] h-[60px] md:h-[80px] rounded-full opacity-10 -right-3 md:-right-4 -top-3 md:-top-4" style={{ backgroundColor: project.color }} />
-                <div className="absolute w-[40px] md:w-[50px] h-[40px] md:h-[50px] rounded-full opacity-10 -left-2 -bottom-2" style={{ backgroundColor: project.color }} />
+              {/* Screenshot / Fallback Color */}
+              <div className="h-[160px] md:h-[180px] relative overflow-hidden bg-gray-100">
+                {project.screenshot ? (
+                  <Image
+                    src={project.screenshot}
+                    alt={project.title}
+                    fill
+                    className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                    unoptimized
+                  />
+                ) : (
+                  <div
+                    className="w-full h-full flex items-center justify-center"
+                    style={{ backgroundColor: project.color + "18" }}
+                  >
+                    <span className="text-[3rem] md:text-[3.5rem] opacity-40">{project.title.charAt(0)}</span>
+                  </div>
+                )}
+                {/* Gradient overlay at bottom */}
+                <div className="absolute bottom-0 left-0 right-0 h-[40px] bg-gradient-to-t from-black/10 to-transparent" />
               </div>
 
               <div className="p-4 md:p-5">
@@ -166,19 +167,12 @@ export default function ProjectsPage() {
                     </span>
                   )}
                 </div>
-                <h3 className="font-[family-name:var(--font-sora)] font-bold text-[14px] md:text-[15px] text-[#1a1a2e] mb-2">
+                <h3 className="font-[family-name:var(--font-sora)] font-bold text-[14px] md:text-[15px] text-[#1a1a2e] mb-1">
                   {project.title}
                 </h3>
-                <p className="text-[11px] md:text-[11.5px] text-[#666] leading-[1.6] mb-3 md:mb-4">
+                <p className="text-[11px] md:text-[11.5px] text-[#666] leading-[1.6]">
                   {project.description}
                 </p>
-                <div className="flex flex-wrap gap-1.5">
-                  {project.tags.map((tag) => (
-                    <span key={tag} className="px-2 py-0.5 text-[9px] md:text-[10px] text-[#666] bg-[#f5f0e8] rounded-full border border-[#e8e4de]">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
               </div>
             </a>
           ))}
