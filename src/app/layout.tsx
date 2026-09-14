@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
-import { Inter, Space_Grotesk, JetBrains_Mono, Syne } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Inter, Playfair_Display, Plus_Jakarta_Sans, Sora } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -7,29 +7,34 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-display",
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
   subsets: ["latin"],
+  weight: ["400", "700", "800", "900"],
 });
 
-const jetbrains = JetBrains_Mono({
-  variable: "--font-mono",
+const plusJakarta = Plus_Jakarta_Sans({
+  variable: "--font-jakarta",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800"],
 });
 
-const syne = Syne({
-  variable: "--font-syne",
+const sora = Sora({
+  variable: "--font-sora",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["300", "400", "500", "600", "700", "800"],
 });
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+};
 
 export const metadata: Metadata = {
-  title: {
-    default: "Deni Trio Saputra — Creative Technologist",
-    template: "%s | Deni Trio Saputra",
-  },
-  description:
-    "Portfolio of Deni Trio Saputra — Multidisciplinary Creative Technologist specializing in web, mobile, and interactive experiences.",
+  title: "Deni Trio Saputra — Portfolio 2026",
+  description: "Portfolio of Deni Trio Saputra — UI/UX Designer, Frontend Developer, and Creative Technologist.",
   icons: { icon: "/favicon.svg" },
 };
 
@@ -39,11 +44,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang="en"
-      className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrains.variable} ${syne.variable}`}
-    >
-      <body className="bg-[#0a0a0b] text-[#f5f5f7] antialiased">
+    <html lang="en" className={`${inter.variable} ${playfair.variable} ${plusJakarta.variable} ${sora.variable}`}>
+      <body className="antialiased">
         {children}
       </body>
     </html>
