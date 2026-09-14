@@ -6,43 +6,47 @@ const projects = [
   {
     id: 1,
     title: "Sidomulyobatu.id",
-    category: "Web Development",
+    category: "UI/UX & Web Dev",
     description: "Website resmi Desa Sidomulyo Batu dengan fitur profil desa, berita, galeri, dan layanan administrasi online.",
     tags: ["WordPress", "PHP", "Responsive"],
     color: "#059669",
     icon: "🏘️",
+    url: "https://sidomulyobatu.id",
   },
   {
     id: 2,
     title: "Padjadjaran Pusat",
-    category: "Web Development",
+    category: "UI/UX & Web Dev",
     description: "Website organisasi Padjadjaran Pusat dengan sistem manajemen konten dan informasi kegiatan.",
     tags: ["Laravel", "MySQL", "Bootstrap"],
     color: "#1a3a6e",
     icon: "🏛️",
+    url: "https://padjadjaranpusat.org",
   },
   {
     id: 3,
     title: "Oryza Loka Basa",
-    category: "Web Development",
+    category: "UI/UX & Web Dev",
     description: "Website company profile PT Oryza Loka Basa dengan showcase produk beras premium dan sistem ordering.",
     tags: ["Next.js", "Tailwind", "Vercel"],
     color: "#7c3aed",
     icon: "🌾",
+    url: "https://oryzalokabasa.com",
   },
   {
     id: 4,
     title: "Agrowisata Darangdan",
-    category: "Web Development",
+    category: "UI/UX & Web Dev",
     description: "Website agrowisata untuk Oryza Loka Basa dengan informasi wisata, booking, dan gallery foto.",
     tags: ["React", "Node.js", "Maps API"],
     color: "#059669",
     icon: "🌿",
+    url: "https://agrowisatadarangdan.oryzalokabasa.com",
   },
   {
     id: 5,
     title: "Artics Digital Strategy",
-    category: "UI/UX Design",
+    category: "UI/UX & Web Dev",
     description: "Desain UI/UX untuk agency digital strategy. Meliputi landing page, dashboard, dan sistem manajemen klien.",
     tags: ["Figma", "Prototyping", "Design System"],
     color: "#e85d3a",
@@ -51,36 +55,36 @@ const projects = [
   {
     id: 6,
     title: "Nukang",
-    category: "Mobile Apps",
-    description: "Aplikasi mobile untuk jasa tukang bangunan. Memudahkan pengguna mencari dan memesan jasa tukang terpercaya.",
-    tags: ["React Native", "Firebase", "UI Design"],
+    category: "UI/UX Design",
+    description: "Desain UI/UX aplikasi mobile untuk jasa tukang bangunan. Memudahkan pengguna mencari dan memesan jasa tukang terpercaya.",
+    tags: ["Figma", "Mobile Design", "Prototyping"],
     color: "#f59e0b",
     icon: "🔨",
   },
   {
     id: 7,
     title: "Phalanxium",
-    category: "Game Development",
-    description: "Game action strategy dengan mekanik pertahanan formasi. Dikembangkan untuk platform PC.",
-    tags: ["Unity", "C#", "Game Design"],
+    category: "UI/UX Design",
+    description: "Desain UI/UX game action strategy dengan mekanik pertahanan formasi untuk platform PC.",
+    tags: ["Figma", "Game UI", "Prototype"],
     color: "#dc2626",
     icon: "⚔️",
   },
   {
     id: 8,
     title: "Health Mobile Apps",
-    category: "Mobile Apps",
-    description: "Aplikasi mobile kesehatan dengan fitur tracking aktivitas, jadwal minum obat, dan konsultasi dokter.",
-    tags: ["Flutter", "Firebase", "Health API"],
+    category: "UI/UX Design",
+    description: "Desain UI/UX aplikasi mobile kesehatan dengan fitur tracking aktivitas, jadwal minum obat, dan konsultasi dokter.",
+    tags: ["Figma", "Health Tech", "Mobile Design"],
     color: "#0ea5e9",
     icon: "💊",
   },
   {
     id: 9,
     title: "168 Trans",
-    category: "Web Development",
-    description: "Website jasa transportasi dan ekspedisi dengan sistem booking, tracking, dan manajemen armada.",
-    tags: ["Laravel", "Bootstrap", "Midtrans"],
+    category: "UI/UX & Apps",
+    description: "Desain UI/UX dan aplikasi jasa transportasi dan ekspedisi dengan sistem booking, tracking, dan manajemen armada.",
+    tags: ["Figma", "Mobile App", "Booking System"],
     color: "#1a1a2e",
     icon: "🚛",
   },
@@ -88,19 +92,21 @@ const projects = [
     id: 10,
     title: "Museum Game",
     category: "Game Development",
-    description: "Game edukasi tentang sejarah museum Indonesia. Pemain menjelajahi ruangan dan menemukan artefak bersejarah.",
-    tags: ["Unity", "C#", "2D Art"],
+    description: "Game edukasi VR tentang sejarah museum Indonesia. Pemain menjelajahi ruangan dan menemukan artefak bersejarah.",
+    tags: ["Unity", "C#", "VR"],
     color: "#8b5cf6",
     icon: "🏛️",
+    url: "https://polytato.itch.io/uts-vr001-kelompok1",
   },
   {
     id: 11,
     title: "Kapur Game",
     category: "Game Development",
-    description: "Game puzzle kasual dengan tema kapur tulis. Nikmati sensasi bermain dengan grafik unik chalk art style.",
-    tags: ["Unity", "C#", "Chalk Art"],
+    description: "Game puzzle VR kasual dengan tema kapur tulis. Nikmati sensasi bermain dengan grafik unik chalk art style.",
+    tags: ["Unity", "C#", "VR"],
     color: "#ec4899",
     icon: "✏️",
+    url: "https://polytato.itch.io/uas-vr001-kelompok1",
   },
 ];
 
@@ -128,9 +134,12 @@ export default function ProjectsPage() {
       <section className="px-5 md:px-[8%] pb-12 md:pb-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {projects.map((project) => (
-            <div
+            <a
               key={project.id}
-              className="bg-white rounded-2xl shadow-[0_2px_20px_rgba(0,0,0,0.04)] overflow-hidden hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-all hover:-translate-y-1 group cursor-pointer"
+              href={project.url || "#"}
+              target={project.url ? "_blank" : undefined}
+              rel={project.url ? "noopener noreferrer" : undefined}
+              className="block bg-white rounded-2xl shadow-[0_2px_20px_rgba(0,0,0,0.04)] overflow-hidden hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-all hover:-translate-y-1 group"
             >
               <div
                 className="h-[110px] md:h-[130px] flex items-center justify-center relative overflow-hidden"
@@ -144,10 +153,18 @@ export default function ProjectsPage() {
               </div>
 
               <div className="p-4 md:p-5">
-                <div className="flex items-center gap-2 mb-2">
+                <div className="flex items-center justify-between mb-2">
                   <span className="px-2 py-0.5 rounded-full text-[9px] md:text-[10px] font-semibold text-white" style={{ backgroundColor: project.color }}>
                     {project.category}
                   </span>
+                  {project.url && (
+                    <span className="text-[9px] md:text-[10px] text-[#1a3a6e] font-semibold flex items-center gap-1">
+                      Visit
+                      <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" />
+                      </svg>
+                    </span>
+                  )}
                 </div>
                 <h3 className="font-[family-name:var(--font-sora)] font-bold text-[14px] md:text-[15px] text-[#1a1a2e] mb-2">
                   {project.title}
@@ -163,7 +180,7 @@ export default function ProjectsPage() {
                   ))}
                 </div>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </section>
