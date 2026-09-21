@@ -6,7 +6,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Rise App',
+      title: 'RISE Dashboard',
       theme: ThemeData(primarySwatch: Colors.blue),
       home: HomeScreen(),
     );
@@ -21,12 +21,12 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
   static const List<Widget> _pages = <Widget>[
-    Center(child: Text('Dashboard')),
-    Center(child: Text('Tasks')),
-    Center(child: Text('Projects')),
-    Center(child: Text('Calendar')),
-    Center(child: Text('Daily')),
-    Center(child: Text('Reminders')),
+    DashboardPage(),
+    TasksPage(),
+    ProjectsPage(),
+    CalendarPage(),
+    DailyPage(),
+    RemindersPage(),
   ];
 
   void _onItemTapped(int index) {
@@ -38,8 +38,8 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Rise App')),
-      body: _pages[_selectedIndex],
+      appBar: AppBar(title: Text('RISE Dashboard')),
+      body: Center(child: _pages.elementAt(_selectedIndex)),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         items: const <BottomNavigationBarItem>[
@@ -47,13 +47,43 @@ class _HomeScreenState extends State<HomeScreen> {
           BottomNavigationBarItem(icon: Icon(Icons.check_box), label: 'Tasks'),
           BottomNavigationBarItem(icon: Icon(Icons.folder), label: 'Projects'),
           BottomNavigationBarItem(icon: Icon(Icons.calendar_today), label: 'Calendar'),
-          BottomNavigationBarItem(icon: Icon(Icons.wb_sunny), label: 'Daily'),
+          BottomNavigationBarItem(icon: Icon(Icons.today), label: 'Daily'),
           BottomNavigationBarItem(icon: Icon(Icons.alarm), label: 'Reminders'),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.blue,
+        selectedItemColor: Colors.blueAccent,
         onTap: _onItemTapped,
       ),
     );
   }
+}
+
+class DashboardPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) => Text('Dashboard');
+}
+
+class TasksPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) => Text('Tasks');
+}
+
+class ProjectsPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) => Text('Projects');
+}
+
+class CalendarPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) => Text('Calendar');
+}
+
+class DailyPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) => Text('Daily');
+}
+
+class RemindersPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) => Text('Reminders');
 }
