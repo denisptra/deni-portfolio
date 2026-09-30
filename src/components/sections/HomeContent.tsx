@@ -70,7 +70,7 @@ export default function HomeContent() {
 
             <div className="shrink-0 flex flex-row md:flex-col items-center md:items-center gap-4 md:gap-0 w-full md:w-auto">
               <div className="w-[120px] h-[120px] md:w-[180px] md:h-[180px] rounded-full overflow-hidden border-4 border-white shadow-[0_4px_20px_rgba(0,0,0,0.1)]">
-                <Image src="/images.jpg" alt="Deni" width={180} height={180} className="w-full h-full object-cover" />
+                <Image src="/Deni.png" alt="Deni" width={180} height={180} className="w-full h-full object-cover" />
               </div>
               <div className="flex flex-col gap-1.5 md:gap-2 md:mt-5 text-[11px] md:text-[12px] text-[#444]">
                 <div className="flex items-center gap-2">
@@ -79,7 +79,7 @@ export default function HomeContent() {
                     <circle cx="12" cy="12" r="5" />
                     <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none" />
                   </svg>
-                  <span>denisptra_69</span>
+                  <a href="https://www.instagram.com/denisptra_69" target="_blank" rel="noopener noreferrer" className="hover:text-[#1a3a6e] transition-colors underline-offset-2 hover:underline">@denisptra_69</a>
                 </div>
                 <div className="flex items-center gap-2">
                   <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -106,7 +106,8 @@ export default function HomeContent() {
                   </svg>
                 </div>
                 <p className="text-[12px] md:text-[13px] leading-[1.7] text-[#555] ml-7">
-                  Currently studying at<br />Cakrawala University.
+                  Currently studying at<br />
+                  <a href="https://cakrawala.ac.id" target="_blank" rel="noopener noreferrer" className="text-[#1a3a6e] hover:underline transition-colors">Cakrawala University</a>.
                 </p>
               </div>
 
